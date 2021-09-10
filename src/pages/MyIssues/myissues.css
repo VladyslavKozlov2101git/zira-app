@@ -1,0 +1,172 @@
+/**********************************
+**************My issues************
+**********************************/
+.content-allIssues {
+  max-width: 440px;
+  width: 100%;
+  border-right: 2px solid #E5E5E5;
+  padding-right: 12px;
+}
+
+.content-header {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.content-issues-update {
+  color: #A3AFB7;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.content-issues-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+
+.content-issues-txt {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  padding-bottom: 5px;
+}
+
+.content-issues-header {
+  margin-bottom: 3px;
+}
+
+.content-issues-item {
+  border-bottom: 2px solid #E5E5E5;
+  margin-bottom: 10px;
+}
+
+.content-innerIssue {
+  padding-left: 31px;
+}
+
+.content-innerIssue-description {
+  color: #526069;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.content-innerIssue-title {
+  font-weight: 700;
+  line-height: 24px;
+  color: #263238;
+  margin-bottom: 7px;
+}
+
+.content-linked-item {
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 7px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  border-bottom: 2px solid #E5E5E5;
+  max-width: 760px;
+  width: 100%;
+}
+
+.content-linked-item-link {
+  color: #263238;
+}
+
+.content-linked-item span {
+  margin-right: 3px;
+  color: #0B69E3;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.content-attachment-item {
+  width: 128px;
+  height: 128px;
+  padding: 10px;
+  background: #fff;
+  margin-right: 10px;
+}
+
+.content-attachment-filename {
+  color: #526069;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  padding: 3px 0;
+}
+
+.content-attachment-preview {
+  width: 109px;
+  height: 92px;
+}
+
+.content-attachment-btn {
+  border: none;
+  cursor: pointer;
+  background: none;
+  background: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.content-attachment-btn img {
+  margin-top: 5px;
+  height: 66px;
+  width: 50px;
+}
+
+.issues-infoblock-box {
+  margin-right: 90px;
+}
+
+.issues-infoblock-edit {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  width: 22px;
+  height: 22px;
+}
+
+.issues-infoblock-edit::after {
+  content: url(../../components/Images/edit.svg);
+  position: absolute;
+  -webkit-transform: translate(-50%, -60%);
+          transform: translate(-50%, -60%);
+}
+
+.issues-infoblock-reported, .issues-infoblock-txt, .issues-infoblock-estimate {
+  color: #526069;
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 14px;
+  margin-right: 5px;
+  height: 22px;
+}
+
+.issues-infoblock-reported span, .issues-infoblock-txt span, .issues-infoblock-estimate span {
+  margin-left: 10px;
+  color: #263238;
+}
+
+.issues-infoblock-avatar {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.issues-infoblock-name {
+  color: #263238;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 500;
+}
+/*# sourceMappingURL=myissues.css.map */

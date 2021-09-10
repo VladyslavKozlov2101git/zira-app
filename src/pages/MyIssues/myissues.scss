@@ -1,0 +1,176 @@
+
+/**********************************
+**************My issues************
+**********************************/
+
+.content-allIssues{
+    max-width: 440px;
+    width: 100%;
+    border-right: 2px solid #E5E5E5;
+    padding-right: 12px;
+}
+
+.content-header{
+    justify-content: space-between;
+}
+.content-issues{
+
+    &-update{
+        color: #A3AFB7;
+        font-size: 18px;
+        line-height: 24px;
+
+    }
+    
+    &-title{
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 15px;
+    }
+    &-txt{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        padding-bottom: 5px;
+        
+    }
+    &-header{
+        margin-bottom: 3px;
+    }
+
+    &-item{
+        border-bottom: 2px solid #E5E5E5;
+        margin-bottom: 10px;
+    }
+    
+    
+}
+
+
+.content-innerIssue{
+    padding-left: 31px;
+    &-description{
+        color: #526069;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 400;
+    }
+    &-title{
+        font-weight: 700;
+        line-height: 24px;
+        color: #263238;
+        margin-bottom: 7px;
+
+    }
+}
+
+
+.content-linked-item{
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 7px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    border-bottom: 2px solid #E5E5E5;
+    max-width: 760px;
+    width: 100%;
+    &-link{
+        color: #263238;
+    }
+    span{
+        margin-right: 3px;
+        color:#0B69E3 ;
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
+.content-attachment{
+    &-item{
+        width: 128px;
+        height: 128px;
+        padding: 10px;
+        background: #fff;
+        margin-right: 10px;
+    }
+    &-filename{
+        color: #526069;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: center;
+        padding: 3px 0;
+    }
+
+    &-preview{
+        width: 109px;
+        height: 92px;
+    }
+    &-btn{
+        border: none;
+        cursor: pointer;
+        background: none;
+        background: #fff;
+        align-items: center;
+        justify-content: space-between;
+        img{
+            margin-top: 5px;
+            height: 66px;
+            width: 50px;
+        }
+        
+    }
+}
+.issues-infoblock-box{
+    margin-right: 90px;
+}
+
+.issues-infoblock-edit{
+    background-color:transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    width: 22px;
+    height: 22px;
+    
+    &::after{
+        content: url(../../components/Images/edit.svg);
+        position: absolute;
+        transform: translate(-50%, -60%);
+        
+        
+    }
+}
+
+.issues-infoblock{
+    &-reported,
+    &-txt,
+    &-estimate{
+        color: #526069;
+        font-weight: 400;
+        font-size: 18px;
+        margin-bottom: 14px;
+        margin-right: 5px;
+        height: 22px;
+        span{
+            margin-left: 10px;
+            color: #263238;
+        }
+    }
+
+    
+    &-avatar{
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+    }
+
+    &-name{
+        color: #263238;
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 500;
+    }
+    
+}
+

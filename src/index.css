@@ -1,0 +1,282 @@
+h1, h2, h3, h4, h5, h6, html, body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a, html > a, body > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, p, li, a {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #E5E5E5;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.wrapper {
+  max-width: 1620px;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.main {
+  padding: 61px 160px 0 160px;
+}
+
+h1.page-title-text {
+  color: #263238;
+  font-weight: 400;
+  line-height: 38px;
+  font-size: 32px;
+  margin-bottom: 35px;
+}
+
+.page-title-row {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.create-project-btn {
+  padding-left: 31px;
+  padding-right: 10px;
+  background-color: #11C26D;
+  border-radius: 5px;
+  border: none;
+  height: 35px;
+  color: #F3F7F9;
+  font-weight: 700;
+  font-size: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.create-project-btn::before {
+  content: url(./components/Images/plus.svg);
+  position: absolute;
+  left: 5px;
+  top: 8px;
+}
+
+.content-row {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.content-box {
+  max-width: 790px;
+  width: 100%;
+  background-color: #F3F7F9;
+  border-radius: 5px;
+  padding: 15px 20px;
+  height: 424px;
+}
+
+.content-box:first-child {
+  margin-right: 40px;
+}
+
+.content-box-title {
+  color: #263238;
+  font-weight: 700;
+  margin-right: 18px;
+}
+
+.content-box-link {
+  color: #79B2FC;
+  text-decoration: underline;
+  font-weight: 400;
+  font-style: 20px;
+}
+
+.content-circle {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  margin-right: 20px;
+}
+
+.content-list {
+  margin-top: 20px;
+}
+
+.content-item-title {
+  font-size: 18px;
+  color: #263238;
+  font-weight: 400;
+}
+
+.content-item-descr {
+  color: #A3AFB7;
+  line-height: 17px;
+  font-size: 14px;
+}
+
+.content-projects {
+  background-color: #F3F7F9;
+  border-radius: 5px;
+  padding: 16px 20px;
+}
+
+.issues-item {
+  margin-bottom: 10px;
+}
+
+.issues-item-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 700;
+}
+
+.issues-markers {
+  margin-left: auto;
+}
+
+.activities-item {
+  margin-bottom: 10px;
+}
+
+/**********************************
+**************Markers**********
+**********************************/
+.issues-markers-item {
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 20px;
+  margin-right: 7px;
+}
+
+.marker-status-todo {
+  color: #D9E9FF;
+  background-color: #247CF0;
+}
+
+.marker-status-inProgress {
+  color: #FFE1C4;
+  background-color: #DE4E00;
+}
+
+.marker-status-inReview {
+  color: #C2F5FF;
+  background-color: #0099B8;
+}
+
+.marker-status-done {
+  color: #C2FADC;
+  background-color: #05A85C;
+}
+
+.marker-status-blocked {
+  color: #FFDBDC;
+  background-color: #E62020;
+}
+
+.marker-priority-lowest {
+  color: #B53F00;
+  background-color: #FFC894;
+}
+
+.marker-priority-low {
+  color: #B53F00;
+  background-color: #FAB06B;
+}
+
+.marker-priority-medium {
+  color: #B53F00;
+  background-color: #FA983C;
+}
+
+.marker-priority-high {
+  color: #E62020;
+  background-color: #FF8589;
+}
+
+.marker-priority-highest {
+  color: #FF666B;
+  background-color: #FFDBDC;
+}
+
+.marker-type-task {
+  color: #0B69E3;
+  background-color: #79B2FC;
+}
+
+.marker-type-bug {
+  color: #FF4C52;
+  background-color: #FFDBDC;
+}
+
+.marker-type-idea {
+  color: #FAA700;
+  background-color: #FFF39C;
+}
+/*# sourceMappingURL=index.css.map */

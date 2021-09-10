@@ -1,0 +1,20 @@
+
+/**********************************
+**************Project Page**********
+**********************************/
+
+.content-projects{
+    &-row{
+        justify-content: flex-start;
+        width: 100%;
+        margin-bottom: 7px;
+    }
+    &-title{
+        max-width: 800px;
+        width: 100%;
+    }
+    &-key{
+        max-width: 120px;
+        width: 100%;
+    }
+}
