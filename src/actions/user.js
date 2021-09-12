@@ -15,3 +15,16 @@ export const registration = async (email, password, repeat_password, username,fi
         console.error(error)
     }
 }
+
+
+export const login = async (password, username) =>{
+    try {
+        const response = await axios.post('http://api.zira.givenfly.space/api/user/login/',{
+        password,
+        username
+    } )
+    console.log("Response:", response.data.token)
+    } catch (error) {
+        console.error(error)
+    }
+}

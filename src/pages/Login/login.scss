@@ -7,14 +7,14 @@
     border-radius: 5px;
 }
 
-.register-title{
+.login-title{
     font-size: 18px;
     color: #263238;
     font-weight: 700;
     font-size: 30px;
 }
 
-.register-input{
+.login-input{
     border: none;
     color: #A3AFB7;
     line-height: 29px;
@@ -27,10 +27,10 @@
     
 }
 
-.register-box{
+.login-box{
     margin-top: 19px;
 }
-.register-create{
+.login-create{
     max-width: 100px;
     width: 100%;
     text-align: center;
@@ -46,7 +46,7 @@
 
 }
 
-.register-create{
+.login-create{
     max-width: 100px;
     width: 100%;
     text-align: center;
@@ -62,7 +62,7 @@
 
 }
 
-.register-login{
+.login-login{
     
     text-align: center;
     height: 40px;
@@ -75,8 +75,7 @@
     border-bottom: 1px solid #3E8EF7;
 }
 
-
-.reg-logo{
+.reg-res-logo{
     display: flex;
-    margin: 60px auto 20px;
+    margin: 240px auto 20px;
 }
