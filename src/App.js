@@ -7,6 +7,10 @@ import Registration from './pages/Registration/Registration';
 import Login from './pages/Login/Login';
 
 function App() {
+  console.log(!localStorage.token)
+
+ 
+
   return (
     <div className="app">
       <Switch>
@@ -15,7 +19,6 @@ function App() {
         <Route path = '/registration' component={Registration}/>
         <Route path = '/login' component={Login}/>
         <Route path = '/' component={Home}/>
-        
         <Redirect to={'/'} />
       </Switch>
     </div>
