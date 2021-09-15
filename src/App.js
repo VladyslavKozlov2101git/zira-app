@@ -14,11 +14,12 @@ function App() {
   return (
     <div className="app">
       <Switch>
-        <Route path = '/projects' component={Projects}/>
-        <Route path = '/issues' component={MyIssues}/>
         <Route path = '/registration' component={Registration}/>
-        <Route path = '/login' component={Login}/>
-        <Route path = '/' component={Home}/>
+        {/* <Route path = '/login' component={Login}/> */}
+        <Route path = '/login' render={()=> localStorage.token ? <Redirect to={'/'} /> : <Login />}/>
+        <Route path = '/projects' render={()=> !localStorage.token ? <Redirect to={'/login'} /> : <Projects />}/>
+        <Route path = '/issues' render={()=> !localStorage.token ? <Redirect to={'/login'} /> : <MyIssues />}/>
+        <Route path = '/' render={()=> !localStorage.token ? <Redirect to={'/login'} /> : <Home />}/>
         <Redirect to={'/'} />
       </Switch>
     </div>

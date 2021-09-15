@@ -9,6 +9,9 @@ import { login } from '../../actions/user'
 import logo from '../../components/Images/logo.svg'
 
 
+
+
+
 function Login() {    
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
@@ -36,9 +39,9 @@ function Login() {
 
         if (e.target.value.length < 6 || e.target.value.length > 16){
             setPasswordError ("Пароль должен быть больше 6 и меньше 16 символов")
-            // if (!e.target.value){
-            //     setPasswordError ("Пароль не должен быть пустым")
-            // }
+            if (!e.target.value){
+                setPasswordError ("Пароль не должен быть пустым")
+            }
         } else {
             setPasswordError ("")
         }
@@ -58,6 +61,8 @@ function Login() {
         }
     }
 
+     
+
     
 
     return (
@@ -76,10 +81,6 @@ function Login() {
                             Login
                         </h1>
                         
-                        {/* <Input onBlur ={e => blurHandler(e)} placeholder={"Email or username"} name ={"username"} value = {username} setValue = {setUsername}/>
-                    
-                        <Input  placeholder={"Password"} name ={"password"} value = {password} setValue = {setPassword} type ={"password"} /> */}
-
                         <input
                             className = "register-input" 
                             placeholder = {"Email or username"}

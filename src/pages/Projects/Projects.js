@@ -1,15 +1,21 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import './projects.scss'
 import '../MyIssues/myissues.scss'
 import '../../index.scss'
 import Header from '../../components/Header/Header'
+import CreateProject from '../../components/CreateProject/CreateProject'
+
 
 
 export default function Projects() {
+    const [createForm, setCreateForm] = useState(false)
+    console.log(createForm)
+    
     return (
         <>
             <Header />
+            
             <main className="main">
                 <section className="page-title">
                     <div className="wrapper">
@@ -17,11 +23,21 @@ export default function Projects() {
                             <h1 className="page-title-text">
                                 Projects
                             </h1>
-                            <button className="create-project-btn">Create new project</button>
+                            <button 
+                                className="create-project-btn"
+                                onClick={(e)=>setCreateForm(!createForm)}
+                            >
+                                Create new project
+                            </button>
                         </div>
 
                     </div>
                 </section>
+
+                
+                
+                {createForm && <CreateProject closeEvent={() => setCreateForm(false)} />}
+
                 <section className="content">
                     <div className="wrapper">
                         <div className="content-projects column">

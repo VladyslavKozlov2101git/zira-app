@@ -74,8 +74,9 @@ h1.page-title-text{
 }
 
 .create-project-btn{
-    padding-left: 31px;
-    padding-right: 10px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
     background-color: #11C26D;
     border-radius: 5px;
     border: none;
@@ -85,11 +86,12 @@ h1.page-title-text{
     font-size: 20px;
     position: relative;
     cursor: pointer;
+    
     &::before{
         content: url(./components/Images/plus.svg);
-        position: absolute;
-        left: 5px;
-        top: 8px;
+        width: 22px;
+        height: 22px;
+        padding-right: 10px;
     }
 }
 
@@ -254,7 +256,6 @@ h1.page-title-text{
         background-color: #FFF39C;
     }
 }
-
 
 
 
