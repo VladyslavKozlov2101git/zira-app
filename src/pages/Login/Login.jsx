@@ -80,19 +80,30 @@ function Login() {
                         <h1 className="login-title">
                             Login
                         </h1>
-                        
-                        <input
-                            className = "register-input" 
+
+                        <Input 
+                            className = {"register-input"} 
                             placeholder = {"Email or username"}
                             name = "email"
                             value = {username}
                             type = "email"
                             onChange = {e => usernameHandler(e)}
                             onBlur ={e => blurHandler(e)}
-                            required                           
                         />
 
-                        <input
+                        <Input 
+                            className = {"register-input"} 
+                            placeholder = {"Password"}
+                            name = "password"
+                            value = {password}
+                            type = "password"
+                            onChange = {e => passwordHandler(e)}
+                            onBlur ={e => blurHandler(e)}
+                        />
+                        
+                        
+
+                        {/* <input
                             className = "register-input" 
                             placeholder = {"Password"}
                             name = "password"
@@ -101,7 +112,7 @@ function Login() {
                             onChange = {e => passwordHandler(e)}
                             onBlur ={e => blurHandler(e)}
                             required                           
-                        />
+                        /> */}
                         
                         <div className="login-box row end">
                             <NavLink className="login-login" to="./registration">Register</NavLink>

@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
-
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import ProjectListItem from '../../components/ProjectListItem/ProjectListItem'
 import './projects.scss'
 import '../MyIssues/myissues.scss'
 import '../../index.scss'
@@ -10,12 +11,23 @@ import CreateProject from '../../components/CreateProject/CreateProject'
 
 export default function Projects() {
     const [createForm, setCreateForm] = useState(false)
-    console.log(createForm)
-    
+    const [projects, setProjects] = useState([])
+
+    useEffect(() =>
+        axios.get('http://api.zira.givenfly.space/api/projects/', { headers: { "Authorization": `Token ${localStorage.token}` } })
+            .then(res => {
+                setProjects(res.data)
+            })
+            .catch(
+                err => {
+                    console.log(err)
+                })
+        , [])
+
     return (
         <>
             <Header />
-            
+
             <main className="main">
                 <section className="page-title">
                     <div className="wrapper">
@@ -23,9 +35,9 @@ export default function Projects() {
                             <h1 className="page-title-text">
                                 Projects
                             </h1>
-                            <button 
+                            <button
                                 className="create-project-btn"
-                                onClick={(e)=>setCreateForm(!createForm)}
+                                onClick={(e) => setCreateForm(!createForm)}
                             >
                                 Create new project
                             </button>
@@ -34,28 +46,45 @@ export default function Projects() {
                     </div>
                 </section>
 
-                
-                
+
+
                 {createForm && <CreateProject closeEvent={() => setCreateForm(false)} />}
 
                 <section className="content">
                     <div className="wrapper">
                         <div className="content-projects column">
-                            <div className="content-projects-row row">
-                                <div className="content-projects-title bold">Title</div>
-                                <div className="content-projects-key bold">Key</div>
-                                <div className="content-projects-lead bold">Project Lead</div>
-                            </div>
-                            <div className="content-projects-row row">
-                                <div className="content-projects-title">A Launchpad</div>
-                                <div className="content-projects-key">LP</div>
-                                <div className="content-projects-lead">Oleksii Moshura</div>
-                            </div>
-                            <div className="content-projects-row row">
-                                <div className="content-projects-title">Garden Suite</div>
-                                <div className="content-projects-key">GD</div>
-                                <div className="content-projects-lead">Vladyslav Kozlov</div>
-                            </div>
+
+                            {projects.length > 0 ?
+                                <>
+                                <div className="content-projects-row row">
+                                    <div className="content-projects-title bold">Title</div>
+                                    <div className="content-projects-info bold">Short info</div>
+                                    <div className="content-projects-key bold">Key</div>
+                                    <div className="content-projects-lead bold">Project Lead</div>
+                                    <div className="content-projects-spec bold">Specifications</div>
+                                    
+                                </div>
+
+                                {projects.map(project =>
+                                    <ProjectListItem
+                                        key={project.id}
+                                        abr={project.key}
+                                        title={project.title}
+                                        project_lead={project.project_lead}
+                                        short={project.short}
+                                    />
+                                )}
+
+                                </>
+                                :
+                                
+                                <p className="content-projects-empty-list">There are no projects. Click on Create Project</p>
+                        
+                            }
+
+
+
+
                         </div>
                     </div>
                 </section>

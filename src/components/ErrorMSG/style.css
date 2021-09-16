@@ -1,0 +1,25 @@
+.error_message {
+  margin: auto;
+  max-width: 600px;
+  width: 100%;
+  margin-bottom: 10px;
+  height: 40px;
+  padding: 10px;
+  border: 2px solid #FF666B;
+  background: #FFDBDC;
+  border-radius: 5px;
+}
+
+.error_message-img {
+  margin-right: 8px;
+}
+
+.error_message-txt {
+  color: #FF666B;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+/*# sourceMappingURL=style.css.map */

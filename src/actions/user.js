@@ -24,7 +24,20 @@ export const login = async (password, username) =>{
         username
     } )
     localStorage.setItem('token', response.data.token);
-    console.log("Response:", response.data.token)
+    document.location.reload();
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+
+export const createProject = async (title, key) =>{
+    try {
+        const response = await axios.post('http://api.zira.givenfly.space/api/projects/',{
+        title,
+        key
+    }, { headers: {"Authorization" : `Token ${localStorage.token}`}} )
+    console.log("createProject:", response.data)
     } catch (error) {
         console.error(error)
     }

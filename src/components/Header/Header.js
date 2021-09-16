@@ -22,9 +22,6 @@ export default function Header() {
                         <li className="header-menu-item">
                             <NavLink className="header-menu-link" to="/issues">My issues</NavLink>
                         </li>
-                        <li className="header-menu-item">
-                            <NavLink className="header-menu-link" to="/registration">Registration</NavLink>
-                        </li>
                 </ul>
                 </div>
                 

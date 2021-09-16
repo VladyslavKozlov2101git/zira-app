@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 import Input from '../Input/Input'
 import './style.scss'
+import {createProject} from '../../actions/user'
 
 const CreateProject = ({closeEvent}) => {
     const [title, setTitle] = useState("")
     const [key, setKey] = useState("")
+
+
     return (
         <>
             <div className="blur-box" onClick={closeEvent}>
             </div>
-            <div className="create_form">
+            <form className="create_form" onSubmit={(e)=> e.target.reset()}>
                 <p className="create_title">
                     Create a new project
                 </p>
@@ -19,21 +22,21 @@ const CreateProject = ({closeEvent}) => {
                 </div>
                 <div className="create_box row end">
                     <button
-                    onClick={closeEvent}
+                        onClick={closeEvent}
                         className="register-login"
-
                     >
                         Cancel
                     </button>
                     <button
                         type="submit"
                         className="register-create"
+                        onClick = {()=>createProject(title, key)}
                     >
                         Create
                     </button>
                 </div>
 
-            </div>
+            </form>
         </>
 
     )
