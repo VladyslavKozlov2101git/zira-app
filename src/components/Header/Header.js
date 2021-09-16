@@ -3,6 +3,7 @@ import './header.scss'
 import {NavLink} from 'react-router-dom'
 import logo from '../Images/logo.svg'
 import avatar from '../Images/avatar1.png'
+import { Logout } from '../../actions/user'
 
 
 export default function Header() {
@@ -27,7 +28,7 @@ export default function Header() {
                 
                 
                 <div className="header-container">
-                    <img className="header-profile" src={avatar} alt="profile" />
+                    <img className="header-profile" title={"Log Out"} onClick = {()=>Logout()}  src={avatar} alt="profile" />
                 </div>
             </nav>       
         </header>

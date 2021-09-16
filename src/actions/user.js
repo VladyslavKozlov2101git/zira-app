@@ -42,3 +42,9 @@ export const createProject = async (title, key) =>{
         console.error(error)
     }
 }
+
+
+export const Logout = ()=>{
+    localStorage.clear()
+    document.location.reload()
+}
