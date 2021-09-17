@@ -24,9 +24,10 @@ export const login = async (password, username) =>{
         username
     } )
     localStorage.setItem('token', response.data.token);
+    localStorage.removeItem('authError')
     document.location.reload();
     } catch (error) {
-        console.error(error)
+        localStorage.setItem("authError",error.response.data.detail)
     }
 }
 
@@ -48,3 +49,5 @@ export const Logout = ()=>{
     localStorage.clear()
     document.location.reload()
 }
+
+
