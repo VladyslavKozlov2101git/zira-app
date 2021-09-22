@@ -23,7 +23,7 @@ export default function Projects() {
         .catch((err) => {
           console.log(err);
         }),
-    [createForm],
+    [createForm], // subscribe on Modal window to update page after creation of project
   );
 
   return (
