@@ -29,3 +29,15 @@ export let initialValuesAuth  = {
     password: "",
     username: ""
 }
+
+
+export const validationShemaProj = yup.object().shape({
+    title: yup.string().typeError("Должно быть строкой").required("Поле title обязательно к заполнению"),
+    key: yup.string().typeError("Должно быть строкой").required("Поле key обязательно к заполнению"),
+})
+
+
+export let initialValuesProj  = {
+    title: "",
+    key: ""
+}
