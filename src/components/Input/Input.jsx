@@ -1,7 +1,7 @@
 import React from 'react'
 import './style.scss'
 
-function Input({ placeholder, value, setValue, type, name, onBlur, className, onChange, autocomplete = "off", required = true }) {
+function Input({ placeholder, value, setValue, type, name, onBlur, className, onChange, autocomplete = "off", required = false }) {
     return (
         <div className="input-block">
             <input

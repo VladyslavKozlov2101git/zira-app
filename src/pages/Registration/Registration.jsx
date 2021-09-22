@@ -1,53 +1,72 @@
 import './registration.scss'
 import '../MyIssues/myissues.scss'
 import '../../index.scss'
+import { validationShema, initialValues } from '../../variables/variables'
 import Input from '../../components/Input/Input'
-import React, { useState } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { registration } from '../../actions/user'
 import logo from '../../components/Images/logo.svg'
+import { Formik } from 'formik'
+import ErrorMSG from '../../components/ErrorMSG/ErrorMSG'
+
 
 
 function Registration() {
 
 
-    const [first_name, setFirstName] = useState("")
-    const [last_name, setLastName] = useState("")
-    const [email, setEmail] = useState("")
-    const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
-    const [repeat_password, setRepeatPassword] = useState("")
     return (
 
         <main className="main">
             <section className="content">
                 <div className="wrapper">
-                    <form className="form-register column" onSubmit={(e) => e.preventDefault()} >
-                        <h1 className="register-title">
-                            Create a new account
-                        </h1>
-                        <div className="register-box row between">
-                            <Input placeholder={"First name"} value={first_name} setValue={setFirstName} />
-                            <Input placeholder={"Last name"} value={last_name} setValue={setLastName} />
+                    <Formik
+                        initialValues={initialValues}
+                        validateOnBlur // Validation when you come to another field
+                        validationSchema={validationShema}
+                        onSubmit={values => registration(values)}
 
-                        </div>
-                        <Input placeholder={"Email"} value={email} setValue={setEmail} type={"email"} />
-                        <Input placeholder={"Username"} value={username} setValue={setUsername} />
-                        <Input placeholder={"Password"} value={password} setValue={setPassword} type={"password"} />
-                        <Input placeholder={"Repeat password"} value={repeat_password} setValue={setRepeatPassword} type={"password"} />
+                    >
+                        {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
+                            <>
+                                {touched.email && errors.email && <ErrorMSG msg={errors.email} />}
+                                
 
-                        <div className="register-box row end">
-                            <NavLink className="register-login" to="./login">Login</NavLink>
-                            <button
-                                type="submit"
-                                className="register-create"
-                                onClick={() => registration(email, password, repeat_password, username, first_name, last_name)}
-                            >
-                                Create
-                            </button>
-                        </div>
 
-                    </form>
+                                <form className="form-register column" onSubmit={(e) => e.preventDefault()} >
+                                    <h1 className="register-title">
+                                        Create a new account
+                                    </h1>
+
+
+                                    <div className="register-box row between">
+                                        <Input placeholder={"First name"} name={"first_name"} value={values.first_name} onChange={handleChange} onBlur={handleBlur} />
+                                        <Input placeholder={"Last name"} name={"last_name"} value={values.last_name} onChange={handleChange} onBlur={handleBlur} />
+
+                                    </div>
+                                    <Input placeholder={"Email"} name={"email"} value={values.email} onChange={handleChange} onBlur={handleBlur} />
+                                    <Input placeholder={"Username"} name={"username"} value={values.username} onChange={handleChange} onBlur={handleBlur} />
+                                    <Input placeholder={"Password"} name={"password"} value={values.password} type={"password"} onChange={handleChange} onBlur={handleBlur} />
+                                    <Input placeholder={"Repeat password"} name={"repeat_password"} value={values.repeat_password} type={"password"} onChange={handleChange} onBlur={handleBlur} />
+
+                                    <div className="register-box row end">
+                                        <NavLink className="register-login" to="./login">Login</NavLink>
+                                        <button
+                                            type="submit"
+                                            className="register-create"
+                                            disabled={!isValid && !dirty}
+                                            onClick={handleSubmit}
+                                        >
+                                            Create
+                                        </button>
+                                    </div>
+                                </form>
+                            </>
+                        )}
+                    </Formik>
+
+
+
                     <img className="reg-logo" src={logo} alt="logo" />
                 </div>
             </section>

@@ -1,125 +1,84 @@
 import './login.scss'
 import '../MyIssues/myissues.scss'
 import '../../index.scss'
+import { validationShemaAuth , initialValuesAuth  } from '../../variables/variables'
 import Input from '../../components/Input/Input'
 import ErrorMSG from '../../components/ErrorMSG/ErrorMSG'
-import React, {useState } from 'react'
-import {NavLink} from 'react-router-dom'
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 import { login } from '../../actions/user'
 import logo from '../../components/Images/logo.svg'
 
 
+import { Formik } from 'formik'
 
 
 
-function Login() {    
-    const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
-    const [usernameDirty, setUsernameDirty] = useState(false)
-    const [passwordDirty, setPasswordDirty] = useState(false)
-    const [usernameError, setUsernameError] = useState("Email или username не может быть пустым")
-    const [passwordError, setPasswordError] = useState("Password не может быть пустым")
 
-
-    const usernameHandler = (e) =>{
-        setUsername(e.target.value)
-        setUsernameError("")
-        // const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      
-        // if (!re.test(String(e.target.value).toLowerCase)){
-        //     setUsernameError("Некоректное значение Email")
-        // } else{
-        //     setUsernameError("")
-        // }
-    }
-
-
-    const passwordHandler = (e) =>{
-        
-        setPassword(e.target.value)
-
-        if (e.target.value.length < 6 || e.target.value.length > 16){
-            setPasswordError ("Пароль должен быть больше 6 и меньше 16 символов")
-            if (!e.target.value){
-                setPasswordError ("Пароль не должен быть пустым")
-            }
-        } else {
-            setPasswordError ("")
-        }
-    }
-
-
-    const blurHandler = (e) =>{
-        switch (e.target.name){
-            case "username":
-                setUsernameDirty(true)
-                break
-            case "password":
-                setPasswordDirty(true)
-                break
-        }
-    }
-
-     
-
-    
+function Login() {
 
     return (
-        
+
         <main className="main">
             <section className="content">
-                <div className="wrapper">                    
+                <div className="wrapper">
+                    <Formik
+                        initialValues={initialValuesAuth }
+                        validateOnBlur // Validation when you come to another field
+                        validationSchema={validationShemaAuth}
+                        onSubmit={values => login(values)}
 
+                    >
+                        {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
+                            <>
+                                {touched.username && errors.username && <ErrorMSG msg={errors.username} />}
+                                {touched.password && errors.password && <ErrorMSG msg={errors.password} />}
+                                <form className="form-register column" onSubmit={e => e.preventDefault()} >
+                                    <h1 className="login-title">
+                                        Login
+                                    </h1>
 
-                    {(usernameDirty && usernameError &&  <div><ErrorMSG msg={usernameError}/></div>)}
+                                    <Input
+                                        placeholder={"Email or username"}
+                                        name={"username"}
+                                        value={values.username}
+                                        type="email"
+                                        onChange={handleChange} 
+                                        onBlur={handleBlur}
+                                    />
 
-                    {(passwordDirty && passwordError &&  <div><ErrorMSG msg={passwordError}/></div>)}
+                                    <Input
+                                        placeholder={"Password"}
+                                        name={"password"}
+                                        value={values.password}
+                                        type="password"
+                                        onChange={handleChange} 
+                                        onBlur={handleBlur}
+                                    />
 
-                    {localStorage.authError && <div><ErrorMSG msg={localStorage.authError}/></div>}
+                                    <div className="login-box row end">
+                                        <NavLink className="login-login" to="./registration">Register</NavLink>
+                                        <button
+                                            type="submit"
+                                            className="login-create"
+                                            disabled={!isValid && !dirty}
+                                            onClick={handleSubmit}
+                                        >
+                                            Login
+                                        </button>
+                                    </div>
 
-                   
-                    <form className="form-register column" onSubmit={e => e.preventDefault()} >
-                        <h1 className="login-title">
-                            Login
-                        </h1>
+                                </form>
 
-                        <Input 
-                            className = {"register-input"} 
-                            placeholder = {"Email or username"}
-                            name = "username"
-                            value = {username}
-                            type = "email"
-                            onChange = {e => usernameHandler(e)}
-                            onBlur ={e => blurHandler(e)}
-                        />
+                            </>
+                        )}
 
-                        <Input 
-                            className = {"register-input"} 
-                            placeholder = {"Password"}
-                            name = "password"
-                            value = {password}
-                            type = "password"
-                            onChange = {e => passwordHandler(e)}
-                            onBlur ={e => blurHandler(e)}
-                        />
-                        
-                        <div className="login-box row end">
-                            <NavLink className="login-login" to="./registration">Register</NavLink>
-                            <button 
-                                type="submit" 
-                                className="login-create"
-                                onClick={()=> login(password, username)}
-                            >
-                                 Login
-                            </button>
-                        </div>
+                    </Formik>
 
-                    </form>
-
-                    <img className="reg-res-logo" src={logo} alt="logo"/>
+                    <img className="reg-res-logo" src={logo} alt="logo" />
 
                 </div>
-            </section>              
+            </section>
         </main>
     )
 }
@@ -129,5 +88,5 @@ export default Login
 
 
 
-            
+
 
