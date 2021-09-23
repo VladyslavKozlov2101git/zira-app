@@ -1,47 +1,56 @@
-
 /**********************************
 **************Project Page**********
 **********************************/
 
-.content-projects{
-    &-row{
-        justify-content: flex-start;
-        width: 100%;
-        margin-bottom: 7px;
+.content-projects {
+  &-row {
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 7px;
+  }
+  &-title {
+    max-width: 245px;
+    width: 100%;
+  }
+  &-key {
+    max-width: 125px;
+    width: 100%;
+    text-transform: uppercase;
+  }
+  &-empty-list {
+    width: 100%;
+    padding: 50px 0;
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+  }
+  &-info {
+    max-width: 720px;
+    width: 100%;
+  }
+  &-lead {
+    max-width: 270px;
+    width: 100%;
+  }
+  &-spec {
+    max-width: 210px;
+    width: 100%;
+  }
+  &-link {
+    color: #3e8ef7;
+    transition: all 0.9s;
+    &:hover {
+      transition: all 0.9s;
+      border-bottom: 1px solid #3e8ef7;
     }
-    &-title{
-        max-width: 245px;
-        width: 100%;
-    }
-    &-key{
-        max-width: 125px;
-        width: 100%;
-    }
-    &-empty-list{
-        width: 100%;
-        padding: 50px 0;
-        font-weight: 400;
-        font-size: 24px;
-        text-align: center;
-    }
-    &-info{
-        max-width: 720px;
-        width: 100%;
-    }
-    &-lead{
-        max-width: 270px;
-        width: 100%;
-    }
-    &-spec{
-        max-width: 210px;
-        width: 100%;
-    }
-    &-link{
-        color:#3E8EF7;
-        transition: all .9s;
-        &:hover{
-            transition: all .9s;
-            border-bottom: 1px solid #3E8EF7;
-        }
-    }
+  }
+  &-note {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 24px;
+    color: #a3afb7;
+    display: flex;
+    align-self: center;
+  }
 }

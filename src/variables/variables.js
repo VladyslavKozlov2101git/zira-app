@@ -34,10 +34,12 @@ export let initialValuesAuth  = {
 export const validationShemaProj = yup.object().shape({
     title: yup.string().typeError("Должно быть строкой").required("Поле title обязательно к заполнению"),
     key: yup.string().typeError("Должно быть строкой").required("Поле key обязательно к заполнению"),
+    short_info: yup.string().typeError("Должно быть строкой").required("Поле description обязательно к заполнению"),
 })
 
 
 export let initialValuesProj  = {
     title: "",
-    key: ""
+    key: "",
+    short_info: ""
 }

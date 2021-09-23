@@ -8,7 +8,6 @@ import Header from '../../components/Header/Header';
 import CreateProject from '../../components/CreateProject/CreateProject';
 
 export default function Projects() {
- 
   const [createForm, setCreateForm] = useState(false);
   const [projects, setProjects] = useState([]);
 
@@ -24,7 +23,7 @@ export default function Projects() {
         .catch((err) => {
           console.log(err);
         }),
-    [], 
+    [],
   );
 
   return (
@@ -43,7 +42,9 @@ export default function Projects() {
           </div>
         </section>
 
-        {createForm && <CreateProject setProjects ={setProjects}  closeEvent={() => setCreateForm(false)} />}
+        {createForm && (
+          <CreateProject setProjects={setProjects} closeEvent={() => setCreateForm(false)} />
+        )}
 
         <section className="content">
           <div className="wrapper">
@@ -57,7 +58,6 @@ export default function Projects() {
                     <div className="content-projects-lead bold">Project Lead</div>
                     <div className="content-projects-spec bold">Specifications</div>
                   </div>
-                  
 
                   {projects.map((project) => (
                     <ProjectListItem
@@ -65,7 +65,7 @@ export default function Projects() {
                       abr={project.key}
                       title={project.title}
                       project_lead={project.project_lead}
-                      short={project.short}
+                      short={project.short_info}
                     />
                   ))}
                 </>

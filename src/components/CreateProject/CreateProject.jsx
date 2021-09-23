@@ -5,13 +5,14 @@ import { Formik, Form } from 'formik';
 import { validationShemaProj, initialValuesProj } from '../../variables/variables';
 import axios from 'axios';
 
-
-
 const CreateProject = ({ closeEvent, setProjects }) => {
   const createProject = async (values) => {
     try {
-      const response = await axios.post('http://api.zira.givenfly.space/api/projects/',
-        values, { headers: { "Authorization": `Token ${localStorage.token}` } }).then(() => {
+      const response = await axios
+        .post('http://api.zira.givenfly.space/api/projects/', values, {
+          headers: { Authorization: `Token ${localStorage.token}` },
+        })
+        .then(() => {
           axios
             .get('http://api.zira.givenfly.space/api/projects/', {
               headers: { Authorization: `Token ${localStorage.token}` },
@@ -21,14 +22,12 @@ const CreateProject = ({ closeEvent, setProjects }) => {
             })
             .catch((err) => {
               console.log(err);
-            })
-        })
-
+            });
+        });
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
-  }
-
+  };
 
   return (
     <Formik
@@ -63,17 +62,34 @@ const CreateProject = ({ closeEvent, setProjects }) => {
                 onBlur={handleBlur}
               />
             </div>
-            <div className="create_box row end">
-              <button onClick={closeEvent} className="register-login create_cancel">
-                Cancel
-              </button>
-              <button
-                type="submit"
-                className="login-create "
-                disabled={!isValid && !dirty}
-                onClick={handleSubmit}>
-                Create
-              </button>
+
+            <div className="create_box row">
+              <Input
+                className={'create-description'}
+                name={'short_info'}
+                placeholder={'Short description'}
+                value={values.short_info}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+            </div>
+            <div className="create_box row between">
+              <p className="content-projects-note">
+                Note: You will fill project specifications later
+              </p>
+
+              <div>
+                <button onClick={closeEvent} className="register-login create_cancel">
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="login-create "
+                  disabled={!isValid && !dirty}
+                  onClick={handleSubmit}>
+                  Create
+                </button>
+              </div>
             </div>
           </Form>
         </>

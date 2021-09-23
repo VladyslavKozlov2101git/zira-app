@@ -17,6 +17,7 @@
 .content-projects-key {
   max-width: 125px;
   width: 100%;
+  text-transform: uppercase;
 }
 
 .content-projects-empty-list {
