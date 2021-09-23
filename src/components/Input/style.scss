@@ -57,6 +57,14 @@
 }
 
 
+.red-border-bottom.input-block:hover::after {
+    border-bottom: solid 3px #FF666B;
+}
+
+.red-border-bottom.input-block:focus-within::after {
+    border-bottom: solid 3px #FF666B;
+}
+
 input[type="submit"] {
     min-width: 100px;
     padding: 3px 5px 5px;
@@ -67,6 +75,11 @@ input[type="submit"] {
     background: #589ffc;
     color: #f3f7f9;
     transition: all 0.3s ease-out;
+}
+
+.input-half{
+    max-width: 270px;
+    width: 100%;
 }
 
 input[type="submit"]:hover {
