@@ -8,6 +8,7 @@ import Header from '../../components/Header/Header';
 import CreateProject from '../../components/CreateProject/CreateProject';
 
 export default function Projects() {
+ 
   const [createForm, setCreateForm] = useState(false);
   const [projects, setProjects] = useState([]);
 
@@ -23,7 +24,7 @@ export default function Projects() {
         .catch((err) => {
           console.log(err);
         }),
-    [createForm], // subscribe on Modal window to update page after creation of project
+    [], 
   );
 
   return (
@@ -42,7 +43,7 @@ export default function Projects() {
           </div>
         </section>
 
-        {createForm && <CreateProject closeEvent={() => setCreateForm(false)} />}
+        {createForm && <CreateProject setProjects ={setProjects}  closeEvent={() => setCreateForm(false)} />}
 
         <section className="content">
           <div className="wrapper">
@@ -56,6 +57,7 @@ export default function Projects() {
                     <div className="content-projects-lead bold">Project Lead</div>
                     <div className="content-projects-spec bold">Specifications</div>
                   </div>
+                  
 
                   {projects.map((project) => (
                     <ProjectListItem

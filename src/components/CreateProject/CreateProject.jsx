@@ -1,11 +1,35 @@
 import React from 'react';
 import Input from '../Input/Input';
 import './style.scss';
-import { createProject } from '../../actions/user';
 import { Formik, Form } from 'formik';
 import { validationShemaProj, initialValuesProj } from '../../variables/variables';
+import axios from 'axios';
 
-const CreateProject = ({ closeEvent }) => {
+
+
+const CreateProject = ({ closeEvent, setProjects }) => {
+  const createProject = async (values) => {
+    try {
+      const response = await axios.post('http://api.zira.givenfly.space/api/projects/',
+        values, { headers: { "Authorization": `Token ${localStorage.token}` } }).then(() => {
+          axios
+            .get('http://api.zira.givenfly.space/api/projects/', {
+              headers: { Authorization: `Token ${localStorage.token}` },
+            })
+            .then((res) => {
+              setProjects(res.data);
+            })
+            .catch((err) => {
+              console.log(err);
+            })
+        })
+
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+
   return (
     <Formik
       initialValues={initialValuesProj}
