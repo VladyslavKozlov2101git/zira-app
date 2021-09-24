@@ -17,7 +17,7 @@ export default function Header() {
                     <ul className="header-menu row">
                         
                         <li className="header-menu-item">
-                            <NavLink className="header-menu-link" to="./projects">Projects</NavLink>
+                            <NavLink className="header-menu-link" to="/projects">Projects</NavLink>
                             <button className="header-arrow"></button>
                         </li>
                         <li className="header-menu-item">

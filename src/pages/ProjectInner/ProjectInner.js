@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useParams } from "react-router-dom";
 import attachment from '../../components/Images/attachment.png'
 import uploadFile from '../../components/Images/addFile.svg'
 import avatar1 from '../../components/Images/avatar1.png'
@@ -9,11 +10,13 @@ import settings from '../../components/Images/settings.svg'
 import specifications from '../../components/Images/specifications.svg'
 import CreateIssue from '../../components/CreateIssue/CreateIssue'
 
-export default function MyIssues() {
+export default function ProjectInner() {
     const [createForm, setCreateForm] = useState(false);
+    const { id } = useParams()
     return (
         <>
             <Header />
+            {console.log(id)}
             <main className="main">
                 <section className="page-title">
                     <div className="wrapper">

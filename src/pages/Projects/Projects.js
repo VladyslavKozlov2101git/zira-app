@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProjectListItem from '../../components/ProjectListItem/ProjectListItem';
 import './projects.scss';
-import '../MyIssues/myissues.scss';
+import '../ProjectInner/style.scss';
 import '../../index.scss';
 import Header from '../../components/Header/Header';
 import CreateProject from '../../components/CreateProject/CreateProject';
@@ -62,6 +62,7 @@ export default function Projects() {
                   {projects.map((project) => (
                     <ProjectListItem
                       key={project.id}
+                      numID={project.id}
                       abr={project.key}
                       title={project.title}
                       project_lead={project.project_lead_name}

@@ -1,5 +1,5 @@
 import './login.scss';
-import '../MyIssues/myissues.scss';
+import '../ProjectInner/style.scss';
 import '../../index.scss';
 import { validationShemaAuth, initialValuesAuth } from '../../variables/variables';
 import Input from '../../components/Input/Input';

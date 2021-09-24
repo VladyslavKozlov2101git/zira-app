@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Projects/projects.scss'
-import '../MyIssues/myissues.scss'
+import '../ProjectInner/style.scss'
 import '../../index.scss'
 import avatar1 from '../../components/Images/avatar1.png'
 import avatar2 from '../../components/Images/avatar2.png'
