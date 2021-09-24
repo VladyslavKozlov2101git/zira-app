@@ -14,7 +14,7 @@ export default function Projects() {
   useEffect(
     () =>
       axios
-        .get('http://api.zira.givenfly.space/api/projects/', {
+        .get('http://api.zira.givenfly.space/projects/', {
           headers: { Authorization: `Token ${localStorage.token}` },
         })
         .then((res) => {
@@ -64,7 +64,8 @@ export default function Projects() {
                       key={project.id}
                       abr={project.key}
                       title={project.title}
-                      project_lead={project.project_lead}
+                      project_lead={project.project_lead_name}
+                      project_lead_id={project.project_lead}
                       short={project.short_info}
                     />
                   ))}

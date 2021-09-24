@@ -9,12 +9,12 @@ const CreateProject = ({ closeEvent, setProjects }) => {
   const createProject = async (values) => {
     try {
       const response = await axios
-        .post('http://api.zira.givenfly.space/api/projects/', values, {
+        .post('http://api.zira.givenfly.space/projects/', values, {
           headers: { Authorization: `Token ${localStorage.token}` },
         })
         .then(() => {
           axios
-            .get('http://api.zira.givenfly.space/api/projects/', {
+            .get('http://api.zira.givenfly.space/projects/', {
               headers: { Authorization: `Token ${localStorage.token}` },
             })
             .then((res) => {

@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const registration = async (values) =>{
     try {
-        const response = await axios.post('http://api.zira.givenfly.space/api/user/register/',
+        const response = await axios.post('http://api.zira.givenfly.space/users/register/',
         values
      )
     console.log("Response:", response.data.detail)
@@ -14,7 +14,7 @@ export const registration = async (values) =>{
 
 export const login = async (values) =>{
     try {
-        const response = await axios.post('http://api.zira.givenfly.space/api/user/login/',values)
+        const response = await axios.post('http://api.zira.givenfly.space/users/login/',values)
         localStorage.setItem('token', response.data.token);
         localStorage.removeItem('authError')
         document.location.reload();
