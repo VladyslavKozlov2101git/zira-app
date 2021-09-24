@@ -1,22 +1,51 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios';
 import { useParams } from "react-router-dom";
-import attachment from '../../components/Images/attachment.png'
-import uploadFile from '../../components/Images/addFile.svg'
-import avatar1 from '../../components/Images/avatar1.png'
-import avatar2 from '../../components/Images/avatar2.png'
 import Header from '../../components/Header/Header'
 import plus from '../../components/Images/plus.svg'
 import settings from '../../components/Images/settings.svg'
 import specifications from '../../components/Images/specifications.svg'
 import CreateIssue from '../../components/CreateIssue/CreateIssue'
+import IssueItem from '../../components/IssueItem/IssueItem';
+import InnerIssue from '../../components/InnerIssue/InnerIssue';
+
 
 export default function ProjectInner() {
     const [createForm, setCreateForm] = useState(false);
+    const [issuesList, setIssuesList] = useState([]);
+    const [issuesInner, setIssuesInner] = useState();
     const { id } = useParams()
+
+    useEffect(
+        () =>
+            axios
+                .get('http://api.zira.givenfly.space/projects/' + id + '/issues/', {
+                    headers: { Authorization: `Token ${localStorage.token}` },
+                })
+                .then((res) => {
+                    setIssuesList(res.data);
+                })
+                .catch((err) => {
+                    console.log(err);
+                }),
+        [],
+    );
+
+    const getIssueInfo = async (projectId, issueId) => {
+        try {
+            const response = await axios.get(`http://api.zira.givenfly.space/projects/${projectId}/${issueId}`, { headers: { "Authorization": `Token ${localStorage.token}` } })
+
+            setIssuesInner(response.data)
+
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+
     return (
         <>
             <Header />
-            {console.log(id)}
             <main className="main">
                 <section className="page-title">
                     <div className="wrapper">
@@ -44,7 +73,7 @@ export default function ProjectInner() {
                 </section>
 
                 {createForm && (
-                    <CreateIssue  closeEvent={() => setCreateForm(false)} />
+                    <CreateIssue closeEvent={() => setCreateForm(false)} />
                 )}
 
                 <section className="content">
@@ -55,220 +84,43 @@ export default function ProjectInner() {
                                     All issues
                                 </h2>
                                 <ul className="content-issues-list">
-                                    <li className="content-issues-item">
-                                        <div className="content-issues-header row">
-                                            <p className="content-issues-key">
-                                                [LP-12]
-                                            </p>
-                                            <ul className="issues-markers row">
-                                                <li className="issues-markers-item  marker-type-task">
-                                                    Task
-                                                </li>
-                                                <li className="issues-markers-item  marker-priority-medium">
-                                                    Medium
-                                                </li>
-                                                <li className="issues-markers-item  marker-status-todo">
-                                                    Todo
-                                                </li>
-                                            </ul>
-
-                                        </div>
-                                        <p className="content-issues-txt">
-                                            Добавить временные метки в song splitter
-                                        </p>
-                                    </li>
-                                    <li className="content-issues-item">
-                                        <div className="content-issues-header row">
-                                            <p className="content-issues-key">
-                                                [LP-12]
-                                            </p>
-                                            <ul className="issues-markers row">
-                                                <li className="issues-markers-item  marker-type-task">
-                                                    Task
-                                                </li>
-                                                <li className="issues-markers-item  marker-priority-medium">
-                                                    Medium
-                                                </li>
-                                                <li className="issues-markers-item  marker-status-todo">
-                                                    Todo
-                                                </li>
-                                            </ul>
-
-                                        </div>
-                                        <p className="content-issues-txt">
-                                            Добавить временные метки в song splitter
-                                        </p>
-                                    </li>
-                                    <li className="content-issues-item">
-                                        <div className="content-issues-header row">
-                                            <p className="content-issues-key">
-                                                [LP-12]
-                                            </p>
-                                            <ul className="issues-markers row">
-                                                <li className="issues-markers-item  marker-type-task">
-                                                    Task
-                                                </li>
-                                                <li className="issues-markers-item  marker-priority-medium">
-                                                    Medium
-                                                </li>
-                                                <li className="issues-markers-item  marker-status-todo">
-                                                    Todo
-                                                </li>
-                                            </ul>
-
-                                        </div>
-                                        <p className="content-issues-txt">
-                                            Добавить временные метки в song splitter
-                                        </p>
-                                    </li>
-                                    <li className="content-issues-item">
-                                        <div className="content-issues-header row">
-                                            <p className="content-issues-key">
-                                                [LP-12]
-                                            </p>
-                                            <ul className="issues-markers row">
-                                                <li className="issues-markers-item  marker-type-task">
-                                                    Task
-                                                </li>
-                                                <li className="issues-markers-item  marker-priority-medium">
-                                                    Medium
-                                                </li>
-                                                <li className="issues-markers-item  marker-status-todo">
-                                                    Todo
-                                                </li>
-                                            </ul>
-
-                                        </div>
-                                        <p className="content-issues-txt">
-                                            Добавить временные метки в song splitter
-                                        </p>
-                                    </li>
+                                    {issuesList.map((issue) => (
+                                        <IssueItem
+                                            title={issue.title}
+                                            keyId={issue.key_id}
+                                            key={issue.id}
+                                            projectId={id}
+                                            issueId={issue.loc_id}
+                                            priority={issue.priority}
+                                            type={issue.issue_type}
+                                            status={issue.status}
+                                            onDetail={getIssueInfo}
+                                        />
+                                    ))}
                                 </ul>
                             </div>
-                            <div className="content-issues content-innerIssue column">
-                                <div className="content-header row">
-                                    <h2 className="content-issues-title">
-                                        [LP-12] Добавить временные метки в song splitter
-                                    </h2>
-                                    <p className="content-issues-update">
-                                        Last update: <span>18.09.2021 14:32</span>
-                                    </p>
-                                </div>
+                            <div className="content-issues content-innerIssue column center">
+                                {console.log(issuesInner)}
+                                {issuesInner ?
 
-                                <div className="content-issues-infoBlock row">
-                                    <div className="issues-infoblock-box columm">
-                                        <ul className="issues-markers row">
-                                            <li className="row">
-                                                <p className="issues-infoblock-txt">
-                                                    Type:
-                                                </p>
-                                                <p className="issues-markers-item  marker-type-task">
-                                                    Task
-                                                </p>
-                                            </li>
+                                    <InnerIssue
+                                        description={issuesInner.description}
+                                        status={issuesInner.status}
+                                        priority={issuesInner.priority}
+                                        issue_type={issuesInner.issue_type}
+                                        title={issuesInner.title}
+                                        original_estimate={issuesInner.original_estimate}
+                                        pub_date={issuesInner.pub_date}
+                                        key_id={issuesInner.key_id}
+                                        assignee_name={issuesInner.assignee_name}
+                                        reporter_name={issuesInner.reporter_name}
+                                    /> :
+                                    
+                                    <p className="content-innerIssue-emptyList">Click on the project to see more details</p>
+                                    
+                                }
 
-                                            <li className="row">
-                                                <p className="issues-infoblock-txt">
-                                                    Status:
-                                                </p>
-                                                <p className="issues-markers-item  marker-priority-medium">
-                                                    Medium
-                                                </p>
-                                            </li>
 
-                                            <li className="row">
-                                                <p className="issues-infoblock-txt">
-                                                    Status:
-                                                </p>
-                                                <p className="issues-markers-item  marker-status-todo">
-                                                    Todo
-                                                </p>
-                                            </li>
-
-                                        </ul>
-                                        <div className="issues-infoblock-assignee row">
-                                            <p className="issues-infoblock-txt">
-                                                Assignee:
-                                            </p>
-                                            <img className="issues-infoblock-avatar" src={avatar1} alt="avatar" />
-                                            <p className="issues-infoblock-name">
-                                                Vladyslav Kozlov <span>(you)</span>
-                                            </p>
-                                            <button className="issues-infoblock-edit" />
-                                        </div>
-                                        <div className="issues-infoblock-assignee row">
-                                            <p className="issues-infoblock-txt">
-                                                Reporter:
-                                            </p>
-                                            <img className="issues-infoblock-avatar" src={avatar2} alt="avatar" />
-                                            <p className="issues-infoblock-name">
-                                                Oleksii Moshura <span></span>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                    <div className="issues-infoblock-box columm">
-                                        <div className="issues-infoblock-estimate row">
-                                            Original estimate: <span>2h</span> <button className="issues-infoblock-edit"></button>
-                                        </div>
-                                        <p className="issues-infoblock-reported row">
-                                            Reported: <span>30m</span> <button className="issues-infoblock-edit"></button>
-                                        </p>
-                                    </div>
-
-                                </div>
-
-                                <h3 className="content-innerIssue-title">
-                                    Linked issues
-                                </h3>
-
-                                <ul className="content-linked-list colum">
-                                    <li className="content-linked-item row">
-                                        <a className="content-linked-item-link" href="/">
-                                            <span>[LP-12]</span> Добавить временные метки в song splitter
-                                        </a>
-
-                                    </li>
-                                    <li className="content-linked-item row">
-                                        <a className="content-linked-item-link" href="/">
-                                            <span>[LP-12]</span> Добавить временные метки в song splitter
-                                        </a>
-
-                                    </li><li className="content-linked-item row">
-                                        <a className="content-linked-item-link" href="/">
-                                            <span>[LP-12]</span> Добавить временные метки в song splitter
-                                        </a>
-
-                                    </li><li className="content-linked-item row">
-                                        <a className="content-linked-item-link" href="/">
-                                            <span>[LP-12]</span> Добавить временные метки в song splitter
-                                        </a>
-
-                                    </li>
-                                </ul>
-
-                                <h3 className="content-innerIssue-title">
-                                    Attachments
-                                </h3>
-
-                                <ul className="content-attachment-list row">
-                                    <li className="content-attachment-item column">
-                                        <img className="content-attachment-preview" src={attachment} alt="attachment" />
-                                        <p className="content-attachment-filename">attachment - 1.png</p>
-                                    </li>
-                                    <button className="content-attachment-item content-attachment-btn column">
-                                        <img className="content-attachment-preview" src={uploadFile} alt="attachment" />
-                                        <p className="content-attachment-filename">Upload a file</p>
-                                    </button>
-                                </ul>
-
-                                <h3 className="content-innerIssue-title">
-                                    Description
-                                </h3>
-
-                                <p className="content-innerIssue-description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </p>
 
                             </div>
                         </div>

@@ -40,4 +40,13 @@ export const Logout = ()=>{
     document.location.reload()
 }
 
+export const getIssueInfo = async (projectId, issueId) =>{
+    try {
+        const response = await axios.get(`http://api.zira.givenfly.space/projects/${projectId}/${issueId}`, { headers: {"Authorization" : `Token ${localStorage.token}`}} )
 
+        console.log(response)
+        
+    } catch (error) {
+        console.error(error)
+    }
+}

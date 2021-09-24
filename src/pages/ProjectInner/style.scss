@@ -1,100 +1,71 @@
-
 /**********************************
 **************My issues************
 **********************************/
 
-.content-allIssues{
+.content-allIssues {
     max-width: 440px;
     width: 100%;
-    border-right: 2px solid #E5E5E5;
+    border-right: 2px solid #e5e5e5;
     padding-right: 12px;
 }
 
-.content-header{
+.content-header {
     justify-content: space-between;
 }
-.content-issues{
 
-    &-update{
-        color: #A3AFB7;
-        font-size: 18px;
-        line-height: 24px;
-
-    }
-    
-    &-title{
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 24px;
-        margin-bottom: 15px;
-    }
-    &-txt{
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
-        padding-bottom: 5px;
-        
-    }
-    &-header{
-        margin-bottom: 3px;
-    }
-
-    &-item{
-        border-bottom: 2px solid #E5E5E5;
-        margin-bottom: 10px;
-    }
-    
-    
-}
-
-
-.content-innerIssue{
+.content-innerIssue {
     padding-left: 31px;
-    &-description{
+    width: 100%;
+    &-description {
         color: #526069;
         font-size: 20px;
         line-height: 24px;
         font-weight: 400;
     }
-    &-title{
+    &-title {
         font-weight: 700;
         line-height: 24px;
         color: #263238;
         margin-bottom: 7px;
-
+    }
+    &-emptyList {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        color: #526069;
     }
 }
 
-
-.content-linked-item{
+.content-linked-item {
     font-weight: 400;
     line-height: 20px;
     margin-bottom: 7px;
     padding-bottom: 3px;
     padding-top: 3px;
-    border-bottom: 2px solid #E5E5E5;
+    border-bottom: 2px solid #e5e5e5;
     max-width: 760px;
     width: 100%;
-    &-link{
+    &-link {
         color: #263238;
     }
-    span{
+    span {
         margin-right: 3px;
-        color:#0B69E3 ;
+        color: #0b69e3;
         font-size: 18px;
         line-height: 22px;
     }
 }
 
-.content-attachment{
-    &-item{
+.content-attachment {
+    &-item {
         width: 128px;
         height: 128px;
         padding: 10px;
         background: #fff;
         margin-right: 10px;
     }
-    &-filename{
+    &-filename {
         color: #526069;
         font-size: 12px;
         line-height: 14px;
@@ -102,76 +73,71 @@
         padding: 3px 0;
     }
 
-    &-preview{
+    &-preview {
         width: 109px;
         height: 92px;
     }
-    &-btn{
+    &-btn {
         border: none;
         cursor: pointer;
         background: none;
         background: #fff;
         align-items: center;
         justify-content: space-between;
-        img{
+        img {
             margin-top: 5px;
             height: 66px;
             width: 50px;
         }
-        
     }
 }
-.issues-infoblock-box{
+.issues-infoblock-box {
     margin-right: 90px;
 }
 
-.issues-infoblock-edit{
-    background-color:transparent;
+.issues-infoblock-edit {
+    background-color: transparent;
     border: none;
     cursor: pointer;
     position: relative;
     width: 22px;
     height: 22px;
-    
-    &::after{
+
+    &::after {
         content: url(../../components/Images/edit.svg);
         position: absolute;
         transform: translate(-50%, -60%);
-        
-        
     }
 }
 
-.issues-infoblock{
+.issues-infoblock {
     &-reported,
     &-txt,
-    &-estimate{
+    &-estimate {
         color: #526069;
         font-weight: 400;
         font-size: 18px;
         margin-bottom: 14px;
         margin-right: 5px;
         height: 22px;
-        span{
+        span {
             margin-left: 10px;
             color: #263238;
         }
     }
 
-    
-    &-avatar{
+    &-avatar {
         width: 24px;
         height: 24px;
         margin-right: 5px;
     }
 
-    &-name{
+    &-name {
         color: #263238;
         font-size: 18px;
         line-height: 22px;
         font-weight: 500;
     }
-    
 }
 
 .button {
@@ -199,14 +165,14 @@
     padding: 5px 10px;
     cursor: pointer;
     margin-left: 10px;
-    &-icon{
+    &-icon {
         margin-right: 10px;
     }
-    p{
+    p {
         padding-bottom: 2px;
     }
 }
 
-.page-title-buttons{
+.page-title-buttons {
     align-items: center;
 }
