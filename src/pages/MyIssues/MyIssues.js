@@ -1,24 +1,49 @@
-import React from 'react'
+import React, { useState } from 'react'
 import attachment from '../../components/Images/attachment.png'
 import uploadFile from '../../components/Images/addFile.svg'
 import avatar1 from '../../components/Images/avatar1.png'
 import avatar2 from '../../components/Images/avatar2.png'
 import Header from '../../components/Header/Header'
+import plus from '../../components/Images/plus.svg'
+import settings from '../../components/Images/settings.svg'
+import specifications from '../../components/Images/specifications.svg'
+import CreateIssue from '../../components/CreateIssue/CreateIssue'
 
 export default function MyIssues() {
+    const [createForm, setCreateForm] = useState(false);
     return (
         <>
             <Header />
             <main className="main">
                 <section className="page-title">
                     <div className="wrapper">
-                        <div className="page-title-row row">
+                        <div className="page-title-row row between">
                             <h1 className="page-title-text">
                                 A Launchpad - overview
                             </h1>
+                            <div className="page-title-buttons row">
+                                <button className="page-title-button button-specifications">
+                                    <img className="page-title-button-icon" src={specifications} alt="specifications" />
+                                    <p>View specifications</p>
+
+                                </button>
+                                <button className="page-title-button button-settings">
+                                    <img className="page-title-button-icon" src={settings} alt="settings" />
+                                    <p>Settings</p>
+                                </button>
+                                <button className="page-title-button button-add-new" onClick={(e) => setCreateForm(!createForm)}>
+                                    <img className="page-title-button-icon" src={plus} alt="plus" />
+                                    <p>Add new issue</p>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </section>
+
+                {createForm && (
+                    <CreateIssue  closeEvent={() => setCreateForm(false)} />
+                )}
+
                 <section className="content">
                     <div className="wrapper">
                         <div className="content-projects row">

@@ -174,3 +174,39 @@
     
 }
 
+.button {
+    &-specifications {
+        background-color: #fab06b;
+    }
+    &-settings {
+        background-color: #3e8ef7;
+    }
+    &-add-new {
+        background-color: #11c26d;
+    }
+}
+
+.page-title-button {
+    border: none;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    color: #f3f7f9;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    &-icon{
+        margin-right: 10px;
+    }
+    p{
+        padding-bottom: 2px;
+    }
+}
+
+.page-title-buttons{
+    align-items: center;
+}
