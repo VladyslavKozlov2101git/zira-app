@@ -1,4 +1,4 @@
-.input-block {
+.textarea-block {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -8,7 +8,7 @@
   pointer-events: none;
 }
 
-.input-block label {
+.textarea-block label {
   position: absolute;
   font-size: 24px;
   color: #a3afb7;
@@ -17,14 +17,14 @@
   transition: all 0.2s cubic-bezier(0, 0, 0, 1);
 }
 
-.input-block input:focus + label,
-.input-block input:not(:placeholder-shown) + label {
+.textarea-block textarea:focus + label,
+.textarea-block textarea:not(:placeholder-shown) + label {
   font-size: 14px;
   color: #526069;
-  transform: translate(0, -40px);
+  transform: translate(0, -160px);
 }
 
-.input-block input {
+.textarea-block input {
   outline: none;
   border: none;
   background: none;
@@ -34,13 +34,13 @@
   pointer-events: auto;
 }
 
-.input-block input::placeholder {
+.textarea-block input::placeholder {
   user-select: none;
 }
 
-.input-block::after {
+.textarea-block::after {
   content: '';
-  display: block;
+  display: none;
   margin-top: 5px;
   height: 5px;
   border-bottom: solid 1px #a3afb7;
@@ -48,23 +48,23 @@
   box-sizing: border-box;
 }
 
-.input-block:hover::after {
+.textarea-block:hover::after {
   border-bottom: solid 3px #a3afb7;
 }
 
-.input-block:focus-within::after {
+.textarea-block:focus-within::after {
   border-bottom: solid 3px #589ffc;
 }
 
-.red-border-bottom.input-block:hover::after {
+.red-border-bottom.textarea-block:hover::after {
   border-bottom: solid 3px #ff666b;
 }
 
-.red-border-bottom.input-block:focus-within::after {
+.red-border-bottom.textarea-block:focus-within::after {
   border-bottom: solid 3px #ff666b;
 }
 
-input[type='submit'] {
+textarea[type='submit'] {
   min-width: 100px;
   padding: 3px 5px 5px;
   cursor: pointer;
@@ -81,11 +81,11 @@ input[type='submit'] {
   width: 100%;
 }
 
-input[type='submit']:hover {
+textarea[type='submit']:hover {
   background: #3e8ef7;
 }
 
-input[type='submit']:active {
+textarea[type='submit']:active {
   background: #247cf0;
 }
 
@@ -100,9 +100,15 @@ input[type='submit']:active {
   font-size: 20px;
   color: #adb8bf;
   padding: 10px;
+  margin-top: 10px;
+  outline-color: #247cf0;
 }
 
-.create-description.create-description-textarea.input-block {
+.create-description.create-description-textarea.textarea-block {
   pointer-events: initial;
   height: 160px;
+}
+
+.form-textarea.red-outline {
+  outline-color: #ff666b;
 }

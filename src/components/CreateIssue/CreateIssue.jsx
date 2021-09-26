@@ -4,6 +4,7 @@ import './style.scss';
 import { Formik, Form } from 'formik';
 import { validationShemaProj, initialValuesProj } from '../../variables/variables';
 import axios from 'axios';
+import TextArea from '../TextArea/TextArea';
 
 const CreateIssue = ({ closeEvent, setProjects }) => {
   const createIssue = async (values) => {
@@ -71,7 +72,6 @@ const CreateIssue = ({ closeEvent, setProjects }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-
             </div>
 
             <div className="create_box row">
@@ -103,12 +103,21 @@ const CreateIssue = ({ closeEvent, setProjects }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-
+            </div>
+            <div className="create_box row">
+              <TextArea
+                className={'create-description create-description-textarea '}
+                name={'description'}
+                type={'text'}
+                placeholder={'Write your description here'}
+                value={values.description}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                row={4}
+              />
             </div>
 
             <div className="create_box row end">
-
-
               <div>
                 <button onClick={closeEvent} className="register-login create_cancel">
                   Cancel

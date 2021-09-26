@@ -100,7 +100,6 @@ export default function ProjectInner() {
                                 </ul>
                             </div>
                             <div className="content-issues content-innerIssue column center">
-                                {console.log(issuesInner)}
                                 {issuesInner ?
 
                                     <InnerIssue
