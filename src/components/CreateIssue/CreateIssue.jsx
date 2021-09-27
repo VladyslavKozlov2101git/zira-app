@@ -5,6 +5,7 @@ import { Formik, Form } from 'formik';
 import { validationShemaProj, initialValuesProj } from '../../variables/variables';
 import axios from 'axios';
 import TextArea from '../TextArea/TextArea';
+import DropdownSelect from '../DropdownSelect/DropdownSelect';
 
 const CreateIssue = ({ closeEvent, setProjects }) => {
   const createIssue = async (values) => {
@@ -56,46 +57,37 @@ const CreateIssue = ({ closeEvent, setProjects }) => {
               />
             </div>
             <div className="create_box row">
-              <Input
-                className={'create-description'}
-                name={'issue_type'}
+              <DropdownSelect
+                className={'crete-quater dropdown'}
                 placeholder={'Type'}
-                value={values.issue_type}
-                onChange={handleChange}
-                onBlur={handleBlur}
+                options={[
+                  { value: 'task', label: 'Task' },
+                  { value: 'bug', label: 'Bug' },
+                  { value: 'idea', label: 'Idea' },
+                ]}
               />
-              <Input
-                className={'create-description'}
-                name={'priority'}
+              <DropdownSelect
+                className={'crete-quater dropdown'}
                 placeholder={'Priority'}
-                value={values.priority}
-                onChange={handleChange}
-                onBlur={handleBlur}
+                options={[
+                  { value: 'lowest', label: 'Lowest' },
+                  { value: 'low', label: 'Low' },
+                  { value: 'medium', label: 'Medium' },
+                  { value: 'hight', label: 'Hight' },
+                  { value: 'highest', label: 'Highest' },
+                ]}
               />
-            </div>
 
-            <div className="create_box row">
               <Input
-                className={'create-description'}
-                name={'assignee'}
-                placeholder={'Assignee'}
-                value={values.assignee}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-            </div>
-
-            <div className="create_box row">
-              <Input
-                className={'create-description'}
-                name={'original_estimate'}
-                placeholder={'Original estimate (optional)'}
-                value={values.original_estimate}
+                className={'crete-quater'}
+                name={'estimate'}
+                placeholder={'Estimate'}
+                value={values.estimate}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
               <Input
-                className={'create-description'}
+                className={'crete-quater'}
                 name={'deadline'}
                 type={'date'}
                 placeholder={'Deadline (optional)'}
@@ -104,11 +96,28 @@ const CreateIssue = ({ closeEvent, setProjects }) => {
                 onBlur={handleBlur}
               />
             </div>
-            <div className="create_box create_box-wysiwyg row">
-              <TextArea
-                className={'create-description create-description-textarea '}
-                
+
+            <div className="create_box row">
+              <Input
+                className={'crete-half'}
+                name={'reporter'}
+                placeholder={'Reporter'}
+                value={values.reporter}
+                onChange={handleChange}
+                onBlur={handleBlur}
               />
+              <Input
+                className={'crete-half'}
+                name={'assignee'}
+                placeholder={'Assignee'}
+                value={values.assignee}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+            </div>
+
+            <div className="create_box create_box-wysiwyg row">
+              <TextArea className={'create-description create-description-textarea '} />
             </div>
 
             <div className="create_box  row end">

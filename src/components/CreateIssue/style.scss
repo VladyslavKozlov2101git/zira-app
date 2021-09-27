@@ -30,12 +30,12 @@
 
 .create_box {
   margin-bottom: 10px;
-  &-wysiwyg{
+  &-wysiwyg {
     height: 200px;
     border: 1px solid #adb8bf;
     border-radius: 5px;
     padding: 0px 10px 10px 10px;
-    span{
+    span {
       padding: 5px;
     }
   }
@@ -65,4 +65,21 @@
   left: 0;
   background: rgba(228, 234, 236, 0.1);
   backdrop-filter: blur(3px);
+}
+
+.crete-quater {
+  max-width: 225px;
+  width: 100%;
+  margin-left: 20px;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+.crete-half {
+  max-width: 470px;
+  width: 100%;
+  margin-left: 20px;
+  &:first-child {
+    margin-left: 0;
+  }
 }
