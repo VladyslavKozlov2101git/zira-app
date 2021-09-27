@@ -94,7 +94,7 @@ textarea[type='submit']:active {
   resize: none;
   border: 1px solid #adb8bf;
   border-radius: 5px;
-  height: 160px;
+  height: 80px;
   line-height: 20px;
   width: 100%;
   font-size: 20px;
@@ -106,9 +106,13 @@ textarea[type='submit']:active {
 
 .create-description.create-description-textarea.textarea-block {
   pointer-events: initial;
-  height: 160px;
+  height: 100px;
 }
 
 .form-textarea.red-outline {
   outline-color: #ff666b;
+}
+
+.wrapperClassName.rdw-editor-wrapper{
+  height: 100px;
 }

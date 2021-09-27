@@ -1,36 +1,27 @@
 import React from 'react';
 import './style.scss';
-import { Field } from 'formik';
+import { Editor } from "react-draft-wysiwyg";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 function TextArea({
-  placeholder,
-  value,
-  //setValue,
-  type,
-  row,
   name,
   onBlur,
+  type,
+  data,
   className = '',
   onChange,
   required = false,
 }) {
   return (
     <div className={'textarea-block ' + className}>
-      <Field
-        as="textarea"
-        onChange={onChange}
+      <Editor
         className={'form-input form-textarea'}
-        placeholder={' '}
-        name={name}
-        id={name}
-        value={value}
-        //setValue={setValue}
-        type={type}
-        onBlur={onBlur}
-        required={required}
-        row={row}
+        toolbarClassName="toolbarClassName"
+        wrapperClassName="wrapperClassName"
+        editorClassName="editorClassName"
+        resize_enabled={false}
+        disabled={true}
       />
-      <label htmlFor={name}>{placeholder}</label>
     </div>
   );
 }

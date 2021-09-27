@@ -30,6 +30,15 @@
 
 .create_box {
   margin-bottom: 10px;
+  &-wysiwyg{
+    height: 200px;
+    border: 1px solid #adb8bf;
+    border-radius: 5px;
+    padding: 0px 10px 10px 10px;
+    span{
+      padding: 5px;
+    }
+  }
 }
 
 .create-title {

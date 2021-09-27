@@ -104,20 +104,14 @@ const CreateIssue = ({ closeEvent, setProjects }) => {
                 onBlur={handleBlur}
               />
             </div>
-            <div className="create_box row">
+            <div className="create_box create_box-wysiwyg row">
               <TextArea
                 className={'create-description create-description-textarea '}
-                name={'description'}
-                type={'text'}
-                placeholder={'Write your description here'}
-                value={values.description}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                row={4}
+                
               />
             </div>
 
-            <div className="create_box row end">
+            <div className="create_box  row end">
               <div>
                 <button onClick={closeEvent} className="register-login create_cancel">
                   Cancel
