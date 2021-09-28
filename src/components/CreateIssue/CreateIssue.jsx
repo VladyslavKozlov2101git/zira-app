@@ -6,6 +6,9 @@ import { validationShemaProj, initialValuesProj } from '../../variables/variable
 import axios from 'axios';
 import TextArea from '../TextArea/TextArea';
 import DropdownSelect from '../DropdownSelect/DropdownSelect';
+import taskSVG from '../../components/Pictures/SVG/task.svg';
+import Select, { components } from "react-select";
+const { Option } = components;
 
 const CreateIssue = ({ closeEvent, setProjects }) => {
   const createIssue = async (values) => {
@@ -30,8 +33,10 @@ const CreateIssue = ({ closeEvent, setProjects }) => {
       console.error(error);
     }
   };
+ 
 
   return (
+    
     <Formik
       initialValues={initialValuesProj}
       validateOnBlur // Validation when you come to another field
@@ -58,23 +63,25 @@ const CreateIssue = ({ closeEvent, setProjects }) => {
             </div>
             <div className="create_box row">
               <DropdownSelect
+              
                 className={'crete-quater dropdown'}
                 placeholder={'Type'}
                 options={[
-                  { value: 'task', label: 'Task' },
-                  { value: 'bug', label: 'Bug' },
-                  { value: 'idea', label: 'Idea' },
+                  { value: 'task', label: 'Task', icon:"task.svg"},
+                  { value: 'bug', label: 'Bug', icon:"bug.svg"},
+                  { value: 'idea', label: 'Idea', icon:"idea.svg" },
                 ]}
+                components={Option}
               />
               <DropdownSelect
                 className={'crete-quater dropdown'}
                 placeholder={'Priority'}
                 options={[
-                  { value: 'lowest', label: 'Lowest' },
-                  { value: 'low', label: 'Low' },
-                  { value: 'medium', label: 'Medium' },
-                  { value: 'hight', label: 'Hight' },
-                  { value: 'highest', label: 'Highest' },
+                  { value: 'lowest', label: 'Lowest',icon:"lowest.svg" },
+                  { value: 'low', label: 'Low',icon:"low.svg" },
+                  { value: 'medium', label: 'Medium',icon:"medium.svg" },
+                  { value: 'hight', label: 'Hight',icon:"high.svg" },
+                  { value: 'highest', label: 'Highest',icon:"highest.svg" },
                 ]}
               />
 
