@@ -25,7 +25,7 @@ export const validationShemaAuth = yup.object().shape({
 })
 
 
-export let initialValuesAuth  = {
+export let initialValuesAuth = {
     password: "",
     username: ""
 }
@@ -35,12 +35,56 @@ export const validationShemaProj = yup.object().shape({
     title: yup.string().typeError("Должно быть строкой").required("Поле title обязательно к заполнению"),
     key: yup.string().typeError("Должно быть строкой").required("Поле key обязательно к заполнению"),
     short_info: yup.string().typeError("Должно быть строкой").required("Поле description обязательно к заполнению"),
-    
+
 })
 
 
-export let initialValuesProj  = {
+export let initialValuesProj = {
     title: "",
     key: "",
     short_info: ""
 }
+
+export let dropdownPriorityOptions = [{
+        value: 'lowest',
+        label: 'Lowest',
+        icon: "lowest.svg"
+    },
+    {
+        value: 'low',
+        label: 'Low',
+        icon: "low.svg"
+    },
+    {
+        value: 'medium',
+        label: 'Medium',
+        icon: "medium.svg"
+    },
+    {
+        value: 'hight',
+        label: 'Hight',
+        icon: "high.svg"
+    },
+    {
+        value: 'highest',
+        label: 'Highest',
+        icon: "highest.svg"
+    },
+]
+
+export let dropdownTypeOptions = [{
+        value: 'task',
+        label: 'Task',
+        icon: "task.svg"
+    },
+    {
+        value: 'bug',
+        label: 'Bug',
+        icon: "bug.svg"
+    },
+    {
+        value: 'idea',
+        label: 'Idea',
+        icon: "idea.svg"
+    },
+]

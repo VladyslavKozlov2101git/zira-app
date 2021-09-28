@@ -29,13 +29,17 @@ function DropdownSelect({ options, className, placeholder, components }) {
       display: 'flex !important',
       color: '#a3afb7',
       fontSize: '24px',
+      cursor: "pointer"
 
     }),
     option:()=>({
       display: 'flex !important',
       justifyContent: 'flex-start',
-      padding:"0 10px"
-    })
+      padding:"0 10px",
+      cursor: "pointer",
+      zIndex:100
+    }),
+    
   };
 
   const IconOption = props => (

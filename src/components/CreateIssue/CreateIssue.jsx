@@ -2,11 +2,10 @@ import React from 'react';
 import Input from '../Input/Input';
 import './style.scss';
 import { Formik, Form } from 'formik';
-import { validationShemaProj, initialValuesProj } from '../../variables/variables';
+import { validationShemaProj, initialValuesProj, dropdownTypeOptions, dropdownPriorityOptions } from '../../variables/variables';
 import axios from 'axios';
 import TextArea from '../TextArea/TextArea';
 import DropdownSelect from '../DropdownSelect/DropdownSelect';
-import taskSVG from '../../components/Pictures/SVG/task.svg';
 import Select, { components } from "react-select";
 const { Option } = components;
 
@@ -66,23 +65,13 @@ const CreateIssue = ({ closeEvent, setProjects }) => {
               
                 className={'crete-quater dropdown'}
                 placeholder={'Type'}
-                options={[
-                  { value: 'task', label: 'Task', icon:"task.svg"},
-                  { value: 'bug', label: 'Bug', icon:"bug.svg"},
-                  { value: 'idea', label: 'Idea', icon:"idea.svg" },
-                ]}
+                options={dropdownTypeOptions}
                 components={Option}
               />
               <DropdownSelect
                 className={'crete-quater dropdown'}
                 placeholder={'Priority'}
-                options={[
-                  { value: 'lowest', label: 'Lowest',icon:"lowest.svg" },
-                  { value: 'low', label: 'Low',icon:"low.svg" },
-                  { value: 'medium', label: 'Medium',icon:"medium.svg" },
-                  { value: 'hight', label: 'Hight',icon:"high.svg" },
-                  { value: 'highest', label: 'Highest',icon:"highest.svg" },
-                ]}
+                options={dropdownPriorityOptions}
               />
 
               <Input
