@@ -47,44 +47,44 @@ export let initialValuesProj = {
 
 export let dropdownPriorityOptions = [{
         value: 'lowest',
-        label: 'Lowest',
+        label: 'Lowest priority',
         icon: "lowest.svg"
     },
     {
         value: 'low',
-        label: 'Low',
+        label: 'Low priority',
         icon: "low.svg"
     },
     {
         value: 'medium',
-        label: 'Medium',
+        label: 'Medium priority',
         icon: "medium.svg"
     },
     {
         value: 'hight',
-        label: 'Hight',
+        label: 'High priority',
         icon: "high.svg"
     },
     {
         value: 'highest',
-        label: 'Highest',
+        label: 'Highest priority',
         icon: "highest.svg"
     },
 ]
 
 export let dropdownTypeOptions = [{
         value: 'task',
-        label: 'Task',
+        label: 'Task type',
         icon: "task.svg"
     },
     {
         value: 'bug',
-        label: 'Bug',
+        label: 'Bug type',
         icon: "bug.svg"
     },
     {
         value: 'idea',
-        label: 'Idea',
+        label: 'Idea type',
         icon: "idea.svg"
     },
 ]

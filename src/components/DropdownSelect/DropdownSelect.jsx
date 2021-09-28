@@ -37,7 +37,11 @@ function DropdownSelect({ options, className, placeholder, components }) {
       justifyContent: 'flex-start',
       padding:"0 10px",
       cursor: "pointer",
-      zIndex:100
+      zIndex:100,
+      fontSize:14,
+      fontStyle:'italic',
+      color:"#A3AFB7",
+      margin: "8px 0"
     }),
     
   };
