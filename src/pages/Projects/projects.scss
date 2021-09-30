@@ -1,3 +1,5 @@
+@import '../../variables/variables';
+
 /**********************************
 **************Project Page**********
 **********************************/
@@ -47,6 +49,7 @@
   }
   &-userLink {
     color: inherit;
+    @include normalTXT(20px)
   }
   &-note {
     font-size: 20px;

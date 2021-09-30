@@ -1,3 +1,5 @@
+@import '../../variables/variables';
+
 .create_form-issue {
   position: absolute;
   left: 0;
@@ -22,7 +24,7 @@
 }
 
 .create_title {
-  color: #263238;
+  color: $txtColor;
   font-weight: 700;
   line-height: 36px;
   font-size: 30px;

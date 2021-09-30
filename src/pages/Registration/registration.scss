@@ -1,3 +1,5 @@
+@import '../../variables/variables';
+
 .form-register{
     margin: auto ;
     max-width: 600px;
@@ -9,7 +11,7 @@
 
 .register-title{
     font-size: 18px;
-    color: #263238;
+    color: $txtColor;
     font-weight: 700;
     font-size: 30px;
 }

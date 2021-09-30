@@ -1,6 +1,7 @@
 $darkGrey : #526069;
 $lightGrey : #F3F7F9;
 $borderGrey : #a3afb7;
+$txtColor: #263238;
 
 // Types of tasks label colors
 
@@ -62,4 +63,22 @@ $highestTxt: #FFDBDC;
 
 //ERROR MESSAGES STYLE VARS
 
-$erroColor:#FF666B
+$erroColor:#FF666B;
+
+
+
+//TXT STYLE MIXINS
+
+@mixin normalTXT($fontSize) {
+    font-weight: 400;
+    font-size: $fontSize;
+    line-height: 24px;
+    color: $txtColor
+};
+
+@mixin boldTXT($fontSize) {
+    font-weight: 700;
+    font-size: $fontSize;
+    line-height: 24px;
+    color: $txtColor
+};

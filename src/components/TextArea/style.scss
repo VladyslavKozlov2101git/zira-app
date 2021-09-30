@@ -32,9 +32,9 @@
   border: none;
   background: none;
   font-size: 24px;
-  color: #263238;
+  color: $txtColor;
   z-index: 1;
-  pointer-events: auto;
+  pointer-events: auto;  
 }
 
 .textarea-block input::placeholder {
