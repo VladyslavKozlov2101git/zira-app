@@ -1,3 +1,5 @@
+@import '../../variables/variables.scss';
+
 .input-block {
   display: flex;
   flex-direction: column;
@@ -58,11 +60,11 @@
 }
 
 .red-border-bottom.input-block:hover::after {
-  border-bottom: solid 3px #ff666b;
+  border-bottom: solid 3px $erroColor;
 }
 
 .red-border-bottom.input-block:focus-within::after {
-  border-bottom: solid 3px #ff666b;
+  border-bottom: solid 3px $erroColor;
 }
 
 input[type='submit'] {

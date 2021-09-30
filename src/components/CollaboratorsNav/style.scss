@@ -1,0 +1,31 @@
+@import "../../variables/_variables.scss";
+
+
+.collaborators{
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    &_addNew,
+    &_showMore{
+        width: 24px;
+        height: 24px;
+        background-color: $lightGrey;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        margin-right: 10px;
+        cursor: pointer;
+        border: none;
+        display: flex;
+        align-items: center;
+    }
+    &_member{
+        img{
+            margin-right: 10px;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+        }
+        
+    }
+}

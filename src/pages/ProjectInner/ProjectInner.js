@@ -8,6 +8,7 @@ import specifications from '../../components/Images/specifications.svg'
 import CreateIssue from '../../components/CreateIssue/CreateIssue'
 import IssueItem from '../../components/IssueItem/IssueItem';
 import InnerIssue from '../../components/InnerIssue/InnerIssue';
+import CollaboratorsNav from '../../components/CollaboratorsNav/CollaboratorsNav';
 
 
 export default function ProjectInner() {
@@ -50,9 +51,13 @@ export default function ProjectInner() {
                 <section className="page-title">
                     <div className="wrapper">
                         <div className="page-title-row row between">
-                            <h1 className="page-title-text">
-                                A Launchpad - overview
-                            </h1>
+                            <div className="page_title-block row">
+                                <h1 className="page-title-text">
+                                    A Launchpad - overview
+                                </h1>
+                                <CollaboratorsNav />
+                            </div>
+
                             <div className="page-title-buttons row">
                                 <button className="page-title-button button-specifications">
                                     <img className="page-title-button-icon" src={specifications} alt="specifications" />
@@ -114,9 +119,9 @@ export default function ProjectInner() {
                                         assignee_name={issuesInner.assignee_name}
                                         reporter_name={issuesInner.reporter_name}
                                     /> :
-                                    
+
                                     <p className="content-innerIssue-emptyList">Click on the project to see more details</p>
-                                    
+
                                 }
 
 

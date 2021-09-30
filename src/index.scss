@@ -1,3 +1,4 @@
+@import './variables/_variables.scss';
 
 h1, h2, h3, h4, h5, h6, html, body {
     margin: 0;
@@ -158,7 +159,7 @@ h1.page-title-text{
         font-size: 14px;
     }
     &-projects{
-        background-color: #F3F7F9;
+        background-color: $lightGrey;
         border-radius: 5px;
         padding: 16px 20px;
     }
@@ -205,63 +206,63 @@ h1.page-title-text{
 
 .marker-status{
     &-todo{
-        color: #D9E9FF;
-        background-color: #247CF0;
+        color: $todoTxt;
+        background-color: $todoLabel;
     }
     &-in_progress{
-        color: #FFE1C4;
-        background-color: #DE4E00;
+        color: $inProgressTxt;
+        background-color: $inProgressLabel;
     }
     &-in_review{
-        color: #C2F5FF;
-        background-color: #0099B8;
+        color: $inReviewTxt;
+        background-color: $inReviewLabel;
     }
     &-done{
-        color: #C2FADC;
-        background-color: #05A85C;
+        color: $doneTxt;
+        background-color: $doneLabel;
     }
     &-blocked{
-        color: #FFDBDC;
-        background-color: #E62020;
+        color: $blockedTxt;
+        background-color: $blockedLabel;
     }
 }
 
 .marker-priority{
     &-lowest{
-        color: #B53F00;
-        background-color: #FFC894;
+        color: $lowesTxt;
+        background-color: $lowesLabel;
     }
     &-low{
-        color: #B53F00;
-        background-color: #FAB06B;
+        color: $lowTxt;
+        background-color: $lowLabel;
     }
     &-medium{
-        color: #B53F00;
-        background-color: #FA983C;
+        color: $mediumTxt;
+        background-color:  $mediumLabel;
     }
     &-high{
-        color: #E62020;
-        background-color: #FF8589;
+        color: $highLabel;
+        background-color:$highTxt;
     }
     &-highest{
-        color: #FF666B;
-        background-color: #FFDBDC;
+        color: $highestLabel;
+        background-color: $highestTxt;
     }
 }
 
 
 .marker-type{
     &-task{
-        color: #0B69E3;
-        background-color: #79B2FC;
+        color: $taskTxt;
+        background-color: $taskLabel;
     }
     &-bug{
-        color: #FF4C52;
-        background-color: #FFDBDC;
+        color: $bugTxt;
+        background-color: $bugLabel;
     }
     &-idea{
-        color: #FAA700;
-        background-color: #FFF39C;
+        color: $ideaTxt;
+        background-color: $ideaLabel;
     }
 }
 
