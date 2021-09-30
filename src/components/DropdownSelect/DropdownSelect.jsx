@@ -1,8 +1,8 @@
 import React from 'react';
 import Select from 'react-select';
 import './style.scss';
-import { components } from "react-select";
-const { Option } = components;
+import { components } from 'react-select';
+const { Option, SingleValue } = components;
 
 function DropdownSelect({ options, className, placeholder, components }) {
   const customStyles = {
@@ -20,7 +20,7 @@ function DropdownSelect({ options, className, placeholder, components }) {
     }),
     singleValue: () => ({
       color: '#A3AFB7',
-      fontSize: '24px',
+      fontSize: '20px',
     }),
     indicatorSeparator: () => ({
       display: 'none',
@@ -29,51 +29,54 @@ function DropdownSelect({ options, className, placeholder, components }) {
       display: 'flex !important',
       color: '#a3afb7',
       fontSize: '24px',
-      cursor: "pointer"
-
+      cursor: 'pointer',
     }),
-    option:()=>({
+    option: () => ({
       display: 'flex !important',
       justifyContent: 'flex-start',
-      padding:"0 10px",
-      cursor: "pointer",
-      zIndex:100,
-      fontSize:14,
-      fontStyle:'italic',
-      color:"#A3AFB7",
-      margin: "8px 0"
+      padding: '0 10px',
+      cursor: 'pointer',
+      zIndex: 100,
+      fontSize: 14,
+      fontStyle: 'italic',
+      color: '#A3AFB7',
+      margin: '8px 0',
     }),
-    
   };
 
-  const IconOption = props => (
+  const IconOption = (props) => (
     <Option {...props}>
       <img
-        src={require('../../components/Pictures/SVG/'+props.data.icon).default}
-        style={{ height: 20, margin:"0px 10px 5px 0px"}}
+        src={require('../../components/Pictures/SVG/' + props.data.icon).default}
+        style={{ height: 20, margin: '0px 10px 5px 0px' }}
         alt={props.data.label}
       />
       {props.data.label}
     </Option>
   );
-  
-  
+
+  const IconSingleValue = (props) => (
+    <SingleValue {...props}>
+      <img
+        src={require('../../components/Pictures/SVG/' + props.data.icon).default}
+        style={{ height: 20, margin: '0px 10px 0px 0px' }}
+        alt={props.data.label}
+      />
+      {props.data.label}
+    </SingleValue>
+  );
 
   return (
-    
     <>
-     
       <Select
         placeholder={placeholder}
         className={className}
         styles={customStyles}
         options={options}
-        components={{ Option: IconOption }}
+        components={{ Option: IconOption, SingleValue: IconSingleValue }}
       />
     </>
   );
 }
 
 export default DropdownSelect;
-
-
