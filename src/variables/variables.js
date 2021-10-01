@@ -88,3 +88,7 @@ export let dropdownTypeOptions = [{
         icon: "idea.svg"
     },
 ]
+
+export let messagesTXT={
+    successfulRegistration:"You are succesfully registered! Please wait until admin will check your account."
+}

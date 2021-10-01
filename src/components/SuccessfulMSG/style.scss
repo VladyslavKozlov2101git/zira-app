@@ -1,0 +1,24 @@
+@import '../../variables/variables.scss';
+
+.success_message{
+    margin: auto;
+    max-width: 600px;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 40px;
+    padding: 10px;
+    border: 2px solid $successColor;
+    background: $successColorBG;
+    border-radius: 5px;
+    
+    &-img{
+        margin-right: 8px;
+    }
+    &-txt{
+        color: $successColor;
+        display: flex;
+        align-self: center;
+    }
+}
+
+

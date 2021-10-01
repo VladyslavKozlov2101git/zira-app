@@ -21,6 +21,7 @@ function DropdownSelect({ options, className, placeholder, components }) {
     singleValue: () => ({
       color: '#A3AFB7',
       fontSize: '20px',
+      textTransform:'capitalize'
     }),
     indicatorSeparator: () => ({
       display: 'none',
@@ -56,13 +57,8 @@ function DropdownSelect({ options, className, placeholder, components }) {
   );
 
   const IconSingleValue = (props) => (
-    <SingleValue {...props}>
-      <img
-        src={require('../../components/Pictures/SVG/' + props.data.icon).default}
-        style={{ height: 20, margin: '0px 10px 0px 0px' }}
-        alt={props.data.label}
-      />
-      {props.data.label}
+    <SingleValue {...props}>      
+      {props.data.value}
     </SingleValue>
   );
 
@@ -73,7 +69,7 @@ function DropdownSelect({ options, className, placeholder, components }) {
         className={className}
         styles={customStyles}
         options={options}
-        components={{ Option: IconOption, SingleValue: IconSingleValue }}
+        components={{ Option: IconOption, SingleValue:IconSingleValue }}
       />
     </>
   );

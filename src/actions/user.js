@@ -1,11 +1,19 @@
 import axios from "axios";
+import {messagesTXT} from "../variables/variables"
 
-export const registration = async (values) =>{
+
+
+export const registration = async (values, reduxFunc) =>{
+    
+    
     try {
         const response = await axios.post('http://api.zira.givenfly.space/users/register/',
         values
+        
      )
-    console.log("Response:", response.data.detail)
+    sessionStorage.setItem('registation', response.data.detail);
+    reduxFunc(messagesTXT.successfulRegistration)
+    
     } catch (error) {
         console.error(error)
     }

@@ -9,8 +9,18 @@ import { registration } from '../../actions/user';
 import logo from '../../components/Images/logo.svg';
 import { Formik } from 'formik';
 import ErrorMSG from '../../components/ErrorMSG/ErrorMSG';
+import SuccessfulMSG from '../../components/SuccessfulMSG/SuccessfulMSG';
+import { useDispatch, useSelector } from "react-redux";
 
 function Registration() {
+  const dispatch = useDispatch()
+  const message = useSelector(state => state.message)
+  const setMessage = (message) =>{
+    dispatch({type:"SET_SUCCESS_MESSAGE", payload:message})
+  }
+
+
+
   return (
     <main className="main">
       <section className="content">
@@ -19,7 +29,7 @@ function Registration() {
             initialValues={initialValues}
             validateOnBlur // Validation when you come to another field
             validationSchema={validationShema}
-            onSubmit={(values) => registration(values)}>
+            onSubmit={(values) => registration(values, setMessage)}>
             {({
               values,
               errors,
@@ -32,6 +42,7 @@ function Registration() {
             }) => (
               <>
                 {touched.email && errors.email && <ErrorMSG msg={errors.email} />}
+                {message && <SuccessfulMSG msg={message} />}
 
                 <form className="form-register column" onSubmit={(e) => e.preventDefault()}>
                   <h1 className="register-title">Create a new account</h1>
@@ -106,7 +117,7 @@ function Registration() {
                     <button
                       type="submit"
                       className="register-create"
-                      disabled={!isValid && !dirty}
+                      disabled={(!isValid && !dirty) || message}
                       onClick={handleSubmit}>
                       Create
                     </button>
