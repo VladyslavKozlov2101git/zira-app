@@ -6,7 +6,7 @@ import { validationShemaProj, initialValuesProj, dropdownTypeOptions, dropdownPr
 import axios from 'axios';
 import TextArea from '../TextArea/TextArea';
 import DropdownSelect from '../DropdownSelect/DropdownSelect';
-import Select, { components } from "react-select";
+import { components } from "react-select";
 const { Option } = components;
 
 const CreateIssue = ({ closeEvent, setProjects }) => {

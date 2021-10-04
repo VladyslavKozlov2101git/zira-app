@@ -1,3 +1,5 @@
+
+
 import axios from "axios";
 import {messagesTXT} from "../variables/variables"
 
@@ -7,6 +9,7 @@ export const registration = async (values, reduxFunc) =>{
     
     
     try {
+        
         const response = await axios.post('http://api.zira.givenfly.space/users/register/',
         values
         
@@ -34,6 +37,7 @@ export const login = async (values) =>{
 
 export const createProject = async (values) =>{
     try {
+
         const response = await axios.post('http://api.zira.givenfly.space/api/projects/',
         values, { headers: {"Authorization" : `Token ${localStorage.token}`}} )
         

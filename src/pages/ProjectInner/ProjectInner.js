@@ -29,6 +29,7 @@ export default function ProjectInner() {
                 .catch((err) => {
                     console.log(err);
                 }),
+                // eslint-disable-next-line react-hooks/exhaustive-deps
         [],
     );
 
@@ -84,49 +85,53 @@ export default function ProjectInner() {
                 <section className="content">
                     <div className="wrapper">
                         <div className="content-projects row">
-                            <div className="content-issues content-allIssues column">
-                                <h2 className="content-issues-title">
-                                    All issues
-                                </h2>
-                                <ul className="content-issues-list">
-                                    {issuesList.map((issue) => (
-                                        <IssueItem
-                                            title={issue.title}
-                                            keyId={issue.key_id}
-                                            key={issue.id}
-                                            projectId={id}
-                                            issueId={issue.loc_id}
-                                            priority={issue.priority}
-                                            type={issue.issue_type}
-                                            status={issue.status}
-                                            onDetail={getIssueInfo}
-                                        />
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="content-issues content-innerIssue column center">
-                                {issuesInner ?
+                            {issuesList.length > 0 ? <>
+                                <div className="content-issues content-allIssues column">
+                                    <h2 className="content-issues-title">
+                                        All issues
+                                    </h2>
+                                    <ul className="content-issues-list">
+                                        {issuesList.map((issue) => (
+                                            <IssueItem
+                                                title={issue.title}
+                                                keyId={issue.key_id}
+                                                key={issue.id}
+                                                projectId={id}
+                                                issueId={issue.loc_id}
+                                                priority={issue.priority}
+                                                type={issue.issue_type}
+                                                status={issue.status}
+                                                onDetail={getIssueInfo}
+                                            />
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className="content-issues content-innerIssue column center">
+                                    {issuesInner ?
 
-                                    <InnerIssue
-                                        description={issuesInner.description}
-                                        status={issuesInner.status}
-                                        priority={issuesInner.priority}
-                                        issue_type={issuesInner.issue_type}
-                                        title={issuesInner.title}
-                                        original_estimate={issuesInner.original_estimate}
-                                        pub_date={issuesInner.pub_date}
-                                        key_id={issuesInner.key_id}
-                                        assignee_name={issuesInner.assignee_name}
-                                        reporter_name={issuesInner.reporter_name}
-                                    /> :
+                                        <InnerIssue
+                                            description={issuesInner.description}
+                                            status={issuesInner.status}
+                                            priority={issuesInner.priority}
+                                            issue_type={issuesInner.issue_type}
+                                            title={issuesInner.title}
+                                            original_estimate={issuesInner.original_estimate}
+                                            pub_date={issuesInner.pub_date}
+                                            key_id={issuesInner.key_id}
+                                            assignee_name={issuesInner.assignee_name}
+                                            reporter_name={issuesInner.reporter_name}
+                                        /> :
 
-                                    <p className="content-innerIssue-emptyList">Click on the project to see more details</p>
+                                        <p className="content-innerIssue-emptyList">Click on the project to see more details</p>
 
-                                }
+                                    }
 
 
 
-                            </div>
+                                </div>
+                            </> : <div className="content-issues content-empty">There are no issues in the project</div>}
+
+
                         </div>
                     </div>
                 </section>

@@ -23,6 +23,7 @@ export default function Projects() {
         .catch((err) => {
           console.log(err);
         }),
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   );
 
@@ -59,7 +60,9 @@ export default function Projects() {
                     <div className="content-projects-spec bold">Specifications</div>
                   </div>
 
-                  {projects.map((project) => (
+                
+                  {projects.length > 0 ?
+                  projects.map((project) => (
                     <ProjectListItem
                       key={project.id}
                       numID={project.id}
@@ -69,7 +72,7 @@ export default function Projects() {
                       project_lead_id={project.project_lead}
                       short={project.short_info}
                     />
-                  ))}
+                  )) : <div>There are no issues. Click on "Crete new" </div>}
                 </>
               ) : (
                 <p className="content-projects-empty-list">

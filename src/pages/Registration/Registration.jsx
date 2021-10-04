@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 function Registration() {
   const dispatch = useDispatch()
-  const message = useSelector(state => state.message)
+  const message = useSelector(state => state.message.message)
   const setMessage = (message) =>{
     dispatch({type:"SET_SUCCESS_MESSAGE", payload:message})
   }
@@ -110,7 +110,7 @@ function Registration() {
                     onBlur={handleBlur}
                   />
 
-                  <div className="register-box row end">
+                  <div className="register-box register-box-buttons row end">
                     <NavLink className="register-login" to="./login">
                       Login
                     </NavLink>

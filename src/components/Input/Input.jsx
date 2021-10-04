@@ -4,7 +4,7 @@ import './style.scss';
 function Input({
   placeholder,
   value,
-  setValue,
+  setvalue,
   type,
   name,
   onBlur,
@@ -23,7 +23,7 @@ function Input({
         name={name}
         id={name}
         value={value}
-        setValue={setValue}
+        setValue={setvalue}
         type={type}
         onBlur={onBlur}
         autoFocus={autoFocus}
