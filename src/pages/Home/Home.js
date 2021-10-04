@@ -5,6 +5,7 @@ import '../../index.scss'
 import avatar1 from '../../components/Images/avatar1.png'
 import avatar2 from '../../components/Images/avatar2.png'
 import Header from '../../components/Header/Header'
+import './style.scss'
 
 export default function Home() {
     return (

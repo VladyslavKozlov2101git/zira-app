@@ -1,0 +1,17 @@
+@media (max-width: 1025px) {
+  .main {
+    padding: 61px 20px 0 20px;
+  }
+}
+@media (max-width: 768px) {
+  .main {
+    padding: 61px 15px 0 5px;
+  }
+  .content-row {
+    flex-direction: column;
+  }
+  .content-box:first-child {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}

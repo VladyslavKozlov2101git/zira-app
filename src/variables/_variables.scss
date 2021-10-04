@@ -1,88 +1,90 @@
-$darkGrey : #526069;
-$lightGrey : #F3F7F9;
-$borderGrey : #a3afb7;
+$darkGrey: #526069;
+$lightGrey: #f3f7f9;
+$borderGrey: #a3afb7;
 $txtColor: #263238;
 
 // Types of tasks label colors
 
-$taskLabel: #79B2FC;
-$taskTxt: #0B69E3;
+$taskLabel: #79b2fc;
+$taskTxt: #0b69e3;
 
+$bugLabel: #ff4c52;
+$bugTxt: #ffdbdc;
 
-$bugLabel: #FF4C52;
-$bugTxt: #FFDBDC;
-
-$ideaLabel: #FFF39C;
-$ideaTxt: #FAA700;
-
-
-
+$ideaLabel: #fff39c;
+$ideaTxt: #faa700;
 
 // Status of tasks label colors
 
+$todoLabel: #247cf0;
+$todoTxt: #d9e9ff;
 
-$todoLabel: #247CF0;
-$todoTxt: #D9E9FF;
+$inProgressLabel: #de4e00;
+$inProgressTxt: #ffe1c4;
 
-$inProgressLabel: #DE4E00;
-$inProgressTxt: #FFE1C4;
+$inReviewLabel: #0099b8;
+$inReviewTxt: #c2f5ff;
 
-$inReviewLabel: #0099B8;
-$inReviewTxt: #C2F5FF;
+$doneLabel: #05a85c;
+$doneTxt: #c2fadc;
 
-$doneLabel: #05A85C;
-$doneTxt: #C2FADC;
-
-$blockedLabel: #E62020;
-$blockedTxt: #FFDBDC;
-
+$blockedLabel: #e62020;
+$blockedTxt: #ffdbdc;
 
 // Priority of tasks label colors
 
-$lowesLabel: #FFC894;
-$lowesTxt: #B53F00;
+$lowesLabel: #ffc894;
+$lowesTxt: #b53f00;
 
-$lowLabel: #FAB06B;
-$lowTxt: #B53F00;
+$lowLabel: #fab06b;
+$lowTxt: #b53f00;
 
-$mediumLabel: #FA983C;
-$mediumTxt: #B53F00;
+$mediumLabel: #fa983c;
+$mediumTxt: #b53f00;
 
-$highLabel: #FF8589;
-$highTxt: #E62020;
+$highLabel: #ff8589;
+$highTxt: #e62020;
 
-$highestLabel: #FF666B;
-$highestTxt: #FFDBDC;
-
-
-
-
-
-
-
+$highestLabel: #ff666b;
+$highestTxt: #ffdbdc;
 
 //ERROR MESSAGES STYLE VARS
 
-$erroColor:#FF666B;
+$erroColor: #ff666b;
 
 //ERROR MESSAGES STYLE VARS
 
-$successColor:#28D17C;
-$successColorBG:#C2FADC;
-
+$successColor: #28d17c;
+$successColorBG: #c2fadc;
 
 //TXT STYLE MIXINS
 
 @mixin normalTXT($fontSize) {
-    font-weight: 400;
-    font-size: $fontSize;
-    line-height: 24px;
-    color: $txtColor
-};
+  font-weight: 400;
+  font-size: $fontSize;
+  line-height: 24px;
+  color: $txtColor;
+}
 
 @mixin boldTXT($fontSize) {
-    font-weight: 700;
-    font-size: $fontSize;
-    line-height: 24px;
-    color: $txtColor
-};
+  font-weight: 700;
+  font-size: $fontSize;
+  line-height: 24px;
+  color: $txtColor;
+}
+
+//SCROLL BAR MIXINS
+
+@mixin scrollBAR($width, $color) {
+  &::-webkit-scrollbar {
+    width: $width;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: inherit;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $color;
+    outline: 1px solid $color;
+    border-radius: 2px;
+  }
+}

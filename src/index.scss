@@ -1,274 +1,276 @@
 @import './variables/_variables.scss';
 
-h1, h2, h3, h4, h5, h6, html, body {
-    margin: 0;
-    padding: 0;
-  }
-  
-h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a, html > a, body > a {
-    text-decoration: none;
-    color: inherit;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
-  
-ul, p, li, a {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
+
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a,
+html > a,
+body > a {
+  text-decoration: none;
+  color: inherit;
 }
-  
+
+ul,
+p,
+li,
+a {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
 * {
-    box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
 }
-  
+
 html {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
-body{
-    background-color:#E5E5E5;
+body {
+  background-color: #e5e5e5;
 }
 
-.bold{
+.bold {
+  font-weight: 700;
+}
+
+.wrapper {
+  max-width: 1620px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.around {
+  justify-content: space-around;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.end {
+  justify-content: flex-end;
+}
+
+.center {
+  justify-content: center;
+}
+
+.main {
+  padding: 61px 160px 0 160px;
+}
+
+h1.page-title-text {
+  color: $txtColor;
+  font-weight: 400;
+  line-height: 38px;
+  font-size: 32px;
+}
+
+.page-title-row {
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.create-project-btn {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  background-color: #11c26d;
+  border-radius: 5px;
+  border: none;
+  height: 35px;
+  color: #f3f7f9;
+  font-weight: 700;
+  font-size: 20px;
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: url(./components/Images/plus.svg);
+    width: 22px;
+    height: 22px;
+    padding-right: 10px;
+  }
+}
+
+.content-row {
+  justify-content: space-between;
+}
+
+.content-box {
+  max-width: 790px;
+  width: 100%;
+  background-color: #f3f7f9;
+  border-radius: 5px;
+  padding: 15px 20px;
+  height: 424px;
+  &:first-child {
+    margin-right: 40px;
+  }
+
+  &-title {
+    color: $txtColor;
     font-weight: 700;
+    margin-right: 18px;
+  }
+
+  &-link {
+    color: #79b2fc;
+    text-decoration: underline;
+    font-weight: 400;
+    font-style: 20px;
+  }
 }
 
-.wrapper{
-    max-width:1620px;
-}
-
-.row{
-    display: flex;
-    flex-direction: row;
-}
-
-.column{
-    display: flex;
-    flex-direction: column;
-}
-.around{
-    justify-content: space-around;
-}
-
-.between{
-    justify-content: space-between;
-}
-
-.end{
-    justify-content: flex-end;
-}
-
-.center{
-    justify-content: center;
-}
-
-.main{
-    padding: 61px 160px 0 160px;
-}
-
-h1.page-title-text{
+.content {
+  &-circle {
+    border-radius: 50%;
+    max-width: 48px;
+    width: 100%;
+    height: 48px;
+    margin-right: 20px;
+  }
+  &-list {
+    margin-top: 20px;
+  }
+  &-item-title {
+    font-size: 18px;
     color: $txtColor;
     font-weight: 400;
-    line-height: 38px;
-    font-size: 32px;
-    
-
+  }
+  &-item-descr {
+    color: #a3afb7;
+    line-height: 17px;
+    font-size: 14px;
+  }
+  &-projects {
+    background-color: $lightGrey;
+    border-radius: 5px;
+    padding: 16px 20px;
+  }
 }
 
-.page-title-row{
-    justify-content: space-between;
-    margin-bottom: 35px;
-    
-}
-
-.create-project-btn{
-    padding: 0 10px;
+.issues-item {
+  margin-bottom: 10px;
+  &-logo {
     display: flex;
+    justify-content: center;
     align-items: center;
-    background-color: #11C26D;
-    border-radius: 5px;
-    border: none;
-    height: 35px;
-    color: #F3F7F9;
     font-weight: 700;
-    font-size: 20px;
-    position: relative;
-    cursor: pointer;
-    
-    &::before{
-        content: url(./components/Images/plus.svg);
-        width: 22px;
-        height: 22px;
-        padding-right: 10px;
-    }
+  }
 }
 
-.content-row{
-    justify-content: space-between;
+.issues-markers {
+  margin-left: auto;
+  flex-wrap: wrap;
 }
-
-.content-box{
-    max-width: 790px;
-    width: 100%;
-    background-color: #F3F7F9;
-    border-radius: 5px;
-    padding: 15px 20px;
-    height: 424px;
-    &:first-child{
-        margin-right: 40px;
-    }
-
-
-    &-title{
-        color: $txtColor;
-        font-weight: 700;
-        margin-right: 18px;
-
-    }
-
-    &-link{
-        color: #79B2FC;
-        text-decoration: underline;
-        font-weight: 400;
-        font-style: 20px;
-    }
-
-    
-
+.activities-item {
+  margin-bottom: 10px;
 }
-
-
-.content{
-    &-circle{
-        border-radius: 50%;
-        max-width: 48px;
-        width: 100%;
-        height: 48px;
-        margin-right: 20px;
-    }
-    &-list{
-        margin-top: 20px;
-    }
-    &-item-title{
-        font-size: 18px;
-        color: $txtColor;
-        font-weight: 400;
-
-    }
-    &-item-descr{
-        color: #A3AFB7;
-        line-height: 17px;
-        font-size: 14px;
-    }
-    &-projects{
-        background-color: $lightGrey;
-        border-radius: 5px;
-        padding: 16px 20px;
-    }
-}
-
-.issues-item{
-    margin-bottom: 10px;
-    &-logo{        
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: 700;
-    }
-}
-
-.issues-markers{
-    margin-left: auto;
-    flex-wrap: wrap;
-}
-.activities-item{
-    margin-bottom: 10px;
-}
-
-
 
 /**********************************
 **************Markers**********
 **********************************/
 
-
-
-.issues-markers-item{
-    border-radius: 5px;
-    padding: 5px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 400;
-    display: flex;
-    align-items: center;
-    height: 20px;
-    margin-right: 7px;
-    text-transform: capitalize;
+.issues-markers-item {
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  height: 20px;
+  margin-right: 7px;
+  text-transform: capitalize;
 }
 
-.marker-status{
-    &-todo{
-        color: $todoTxt;
-        background-color: $todoLabel;
-    }
-    &-in_progress{
-        color: $inProgressTxt;
-        background-color: $inProgressLabel;
-    }
-    &-in_review{
-        color: $inReviewTxt;
-        background-color: $inReviewLabel;
-    }
-    &-done{
-        color: $doneTxt;
-        background-color: $doneLabel;
-    }
-    &-blocked{
-        color: $blockedTxt;
-        background-color: $blockedLabel;
-    }
+.marker-status {
+  &-todo {
+    color: $todoTxt;
+    background-color: $todoLabel;
+  }
+  &-in_progress {
+    color: $inProgressTxt;
+    background-color: $inProgressLabel;
+  }
+  &-in_review {
+    color: $inReviewTxt;
+    background-color: $inReviewLabel;
+  }
+  &-done {
+    color: $doneTxt;
+    background-color: $doneLabel;
+  }
+  &-blocked {
+    color: $blockedTxt;
+    background-color: $blockedLabel;
+  }
 }
 
-.marker-priority{
-    &-lowest{
-        color: $lowesTxt;
-        background-color: $lowesLabel;
-    }
-    &-low{
-        color: $lowTxt;
-        background-color: $lowLabel;
-    }
-    &-medium{
-        color: $mediumTxt;
-        background-color:  $mediumLabel;
-    }
-    &-high{
-        color: $highLabel;
-        background-color:$highTxt;
-    }
-    &-highest{
-        color: $highestLabel;
-        background-color: $highestTxt;
-    }
+.marker-priority {
+  &-lowest {
+    color: $lowesTxt;
+    background-color: $lowesLabel;
+  }
+  &-low {
+    color: $lowTxt;
+    background-color: $lowLabel;
+  }
+  &-medium {
+    color: $mediumTxt;
+    background-color: $mediumLabel;
+  }
+  &-high {
+    color: $highLabel;
+    background-color: $highTxt;
+  }
+  &-highest {
+    color: $highestLabel;
+    background-color: $highestTxt;
+  }
 }
 
-
-.marker-type{
-    &-task{
-        color: $taskTxt;
-        background-color: $taskLabel;
-    }
-    &-bug{
-        color: $bugTxt;
-        background-color: $bugLabel;
-    }
-    &-idea{
-        color: $ideaTxt;
-        background-color: $ideaLabel;
-    }
+.marker-type {
+  &-task {
+    color: $taskTxt;
+    background-color: $taskLabel;
+  }
+  &-bug {
+    color: $bugTxt;
+    background-color: $bugLabel;
+  }
+  &-idea {
+    color: $ideaTxt;
+    background-color: $ideaLabel;
+  }
 }
 
-
-
-
+body {
+  @include scrollBAR('10px', $darkGrey);
+}
