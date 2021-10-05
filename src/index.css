@@ -1,14 +1,31 @@
-h1, h2, h3, h4, h5, h6, html, body {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
-h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a, html > a, body > a {
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a,
+html > a,
+body > a {
   text-decoration: none;
   color: inherit;
 }
 
-ul, p, li, a {
+ul,
+p,
+li,
+a {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -28,7 +45,7 @@ html {
 }
 
 body {
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
 }
 
 .bold {
@@ -59,6 +76,11 @@ body {
           flex-direction: column;
 }
 
+.around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 .between {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -71,6 +93,12 @@ body {
           justify-content: flex-end;
 }
 
+.center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .main {
   padding: 61px 160px 0 160px;
 }
@@ -80,13 +108,13 @@ h1.page-title-text {
   font-weight: 400;
   line-height: 38px;
   font-size: 32px;
-  margin-bottom: 35px;
 }
 
 .page-title-row {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 35px;
 }
 
 .create-project-btn {
@@ -97,11 +125,11 @@ h1.page-title-text {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #11C26D;
+  background-color: #11c26d;
   border-radius: 5px;
   border: none;
   height: 35px;
-  color: #F3F7F9;
+  color: #f3f7f9;
   font-weight: 700;
   font-size: 20px;
   position: relative;
@@ -124,7 +152,7 @@ h1.page-title-text {
 .content-box {
   max-width: 790px;
   width: 100%;
-  background-color: #F3F7F9;
+  background-color: #f3f7f9;
   border-radius: 5px;
   padding: 15px 20px;
   height: 424px;
@@ -141,7 +169,7 @@ h1.page-title-text {
 }
 
 .content-box-link {
-  color: #79B2FC;
+  color: #79b2fc;
   text-decoration: underline;
   font-weight: 400;
   font-style: 20px;
@@ -166,13 +194,13 @@ h1.page-title-text {
 }
 
 .content-item-descr {
-  color: #A3AFB7;
+  color: #a3afb7;
   line-height: 17px;
   font-size: 14px;
 }
 
 .content-projects {
-  background-color: #F3F7F9;
+  background-color: #f3f7f9;
   border-radius: 5px;
   padding: 16px 20px;
 }
@@ -221,70 +249,85 @@ h1.page-title-text {
           align-items: center;
   height: 20px;
   margin-right: 7px;
+  text-transform: capitalize;
 }
 
 .marker-status-todo {
-  color: #D9E9FF;
-  background-color: #247CF0;
+  color: #d9e9ff;
+  background-color: #247cf0;
 }
 
-.marker-status-inProgress {
-  color: #FFE1C4;
-  background-color: #DE4E00;
+.marker-status-in_progress {
+  color: #ffe1c4;
+  background-color: #de4e00;
 }
 
-.marker-status-inReview {
-  color: #C2F5FF;
-  background-color: #0099B8;
+.marker-status-in_review {
+  color: #c2f5ff;
+  background-color: #0099b8;
 }
 
 .marker-status-done {
-  color: #C2FADC;
-  background-color: #05A85C;
+  color: #c2fadc;
+  background-color: #05a85c;
 }
 
 .marker-status-blocked {
-  color: #FFDBDC;
-  background-color: #E62020;
+  color: #ffdbdc;
+  background-color: #e62020;
 }
 
 .marker-priority-lowest {
-  color: #B53F00;
-  background-color: #FFC894;
+  color: #b53f00;
+  background-color: #ffc894;
 }
 
 .marker-priority-low {
-  color: #B53F00;
-  background-color: #FAB06B;
+  color: #b53f00;
+  background-color: #fab06b;
 }
 
 .marker-priority-medium {
-  color: #B53F00;
-  background-color: #FA983C;
+  color: #b53f00;
+  background-color: #fa983c;
 }
 
 .marker-priority-high {
-  color: #E62020;
-  background-color: #FF8589;
+  color: #ff8589;
+  background-color: #e62020;
 }
 
 .marker-priority-highest {
-  color: #FF666B;
-  background-color: #FFDBDC;
+  color: #ff666b;
+  background-color: #ffdbdc;
 }
 
 .marker-type-task {
-  color: #0B69E3;
-  background-color: #79B2FC;
+  color: #0b69e3;
+  background-color: #79b2fc;
 }
 
 .marker-type-bug {
-  color: #FF4C52;
-  background-color: #FFDBDC;
+  color: #ffdbdc;
+  background-color: #ff4c52;
 }
 
 .marker-type-idea {
-  color: #FAA700;
-  background-color: #FFF39C;
+  color: #faa700;
+  background-color: #fff39c;
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: inherit;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ccd5db;
+  outline: 1px solid #ccd5db;
+  border-radius: 2px;
 }
 /*# sourceMappingURL=index.css.map */

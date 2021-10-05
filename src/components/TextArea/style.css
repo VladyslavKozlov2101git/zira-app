@@ -1,0 +1,153 @@
+.textarea-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  pointer-events: none;
+}
+
+.textarea-block label {
+  position: absolute;
+  font-size: 24px;
+  color: #a3afb7;
+  -webkit-transform: translate(2px, -10px);
+          transform: translate(2px, -10px);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 0.2s cubic-bezier(0, 0, 0, 1);
+  transition: all 0.2s cubic-bezier(0, 0, 0, 1);
+}
+
+.textarea-block textarea:focus + label,
+.textarea-block textarea:not(:placeholder-shown) + label {
+  font-size: 14px;
+  color: #526069;
+  -webkit-transform: translate(0, -160px);
+          transform: translate(0, -160px);
+}
+
+.textarea-block input {
+  outline: none;
+  border: none;
+  background: none;
+  font-size: 24px;
+  color: #263238;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.textarea-block input::-webkit-input-placeholder {
+  -webkit-user-select: none;
+          user-select: none;
+}
+
+.textarea-block input:-ms-input-placeholder {
+  -ms-user-select: none;
+      user-select: none;
+}
+
+.textarea-block input::-ms-input-placeholder {
+  -ms-user-select: none;
+      user-select: none;
+}
+
+.textarea-block input::placeholder {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.textarea-block::after {
+  content: '';
+  display: none;
+  margin-top: 5px;
+  height: 5px;
+  border-bottom: solid 1px #a3afb7;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.textarea-block:hover::after {
+  border-bottom: solid 3px #a3afb7;
+}
+
+.textarea-block:focus-within::after {
+  border-bottom: solid 3px #589ffc;
+}
+
+.red-border-bottom.textarea-block:hover::after {
+  border-bottom: solid 3px #ff666b;
+}
+
+.red-border-bottom.textarea-block:focus-within::after {
+  border-bottom: solid 3px #ff666b;
+}
+
+textarea[type='submit'] {
+  min-width: 100px;
+  padding: 3px 5px 5px;
+  cursor: pointer;
+  font-size: 24px;
+  border: none;
+  border-radius: 5px;
+  background: #589ffc;
+  color: #f3f7f9;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.input-half {
+  max-width: 270px;
+  width: 100%;
+}
+
+textarea[type='submit']:hover {
+  background: #3e8ef7;
+}
+
+textarea[type='submit']:active {
+  background: #247cf0;
+}
+
+.form-textarea {
+  background-color: inherit;
+  resize: none;
+  border: 1px solid #adb8bf;
+  border-radius: 5px;
+  height: 80px;
+  line-height: 20px;
+  width: 100%;
+  font-size: 20px;
+  color: #adb8bf;
+  padding: 10px;
+  margin-top: 10px;
+  outline-color: #247cf0;
+}
+
+.create-description.create-description-textarea.textarea-block {
+  pointer-events: initial;
+  height: 100px;
+}
+
+.form-textarea.red-outline {
+  outline-color: #ff666b;
+}
+
+.wrapperClassName.rdw-editor-wrapper {
+  height: 100px;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,37 @@
+.collaborators {
+  margin-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.collaborators_addNew, .collaborators_showMore {
+  width: 24px;
+  height: 24px;
+  background-color: #f3f7f9;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 10px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.collaborators_member img {
+  margin-right: 10px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+/*# sourceMappingURL=style.css.map */

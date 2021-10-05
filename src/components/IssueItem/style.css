@@ -1,0 +1,45 @@
+.content-issues-update {
+  color: #a3afb7;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.content-issues-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+
+.content-issues-txt {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  padding-bottom: 5px;
+}
+
+.content-issues-header {
+  margin-bottom: 3px;
+}
+
+.content-issues-key {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #0B69E3;
+}
+
+.content-issues-item {
+  border-bottom: 2px solid #e5e5e5;
+  margin-bottom: 10px;
+  padding: 7px 5px 4px;
+  cursor: pointer;
+}
+
+.content-issues-item:hover {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 6px;
+  background-color: rgba(229, 229, 229, 0.3);
+}
+/*# sourceMappingURL=style.css.map */

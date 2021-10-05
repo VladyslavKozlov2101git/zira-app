@@ -7,6 +7,7 @@
           justify-content: flex-start;
   width: 100%;
   margin-bottom: 7px;
+  font-size: 20px;
 }
 
 .content-projects-title {
@@ -44,14 +45,35 @@
 }
 
 .content-projects-link {
-  color: #3E8EF7;
-  -webkit-transition: all .9s;
-  transition: all .9s;
+  color: #3e8ef7;
+  -webkit-transition: all 0.9s;
+  transition: all 0.9s;
 }
 
 .content-projects-link:hover {
-  -webkit-transition: all .9s;
-  transition: all .9s;
-  border-bottom: 1px solid #3E8EF7;
+  -webkit-transition: all 0.9s;
+  transition: all 0.9s;
+  border-bottom: 1px solid #3e8ef7;
+}
+
+.content-projects-userLink {
+  color: inherit;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #263238;
+}
+
+.content-projects-note {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 24px;
+  color: #a3afb7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 /*# sourceMappingURL=projects.css.map */

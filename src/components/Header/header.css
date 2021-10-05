@@ -1,5 +1,5 @@
 .header {
-  background-color: #F3F7F9;
+  background-color: #f3f7f9;
   height: 60px;
   -webkit-box-shadow: 0px 0px 4px 0px rgba(34, 60, 80, 0.2);
           box-shadow: 0px 0px 4px 0px rgba(34, 60, 80, 0.2);
@@ -33,12 +33,13 @@
 }
 
 .header-menu-link {
-  color: #37474F;
+  color: #37474f;
+  font-size: 18px;
 }
 
 .header-menu-link:hover {
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
   color: #0a1216f8;
 }
 
@@ -59,6 +60,6 @@
   display: flex;
   width: 32px;
   height: 32px;
-  
+  cursor: pointer;
 }
 /*# sourceMappingURL=header.css.map */

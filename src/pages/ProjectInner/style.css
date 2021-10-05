@@ -4,8 +4,16 @@
 .content-allIssues {
   max-width: 440px;
   width: 100%;
-  border-right: 2px solid #E5E5E5;
+  border-right: 2px solid #e5e5e5;
   padding-right: 12px;
+}
+
+.content-empty {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 auto;
+  padding: 25px 0;
 }
 
 .content-header {
@@ -14,37 +22,9 @@
           justify-content: space-between;
 }
 
-.content-issues-update {
-  color: #A3AFB7;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.content-issues-title {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  margin-bottom: 15px;
-}
-
-.content-issues-txt {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  padding-bottom: 5px;
-}
-
-.content-issues-header {
-  margin-bottom: 3px;
-}
-
-.content-issues-item {
-  border-bottom: 2px solid #E5E5E5;
-  margin-bottom: 10px;
-}
-
 .content-innerIssue {
   padding-left: 31px;
+  width: 100%;
 }
 
 .content-innerIssue-description {
@@ -61,13 +41,21 @@
   margin-bottom: 7px;
 }
 
+.content-innerIssue-emptyList {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #526069;
+}
+
 .content-linked-item {
   font-weight: 400;
   line-height: 20px;
   margin-bottom: 7px;
   padding-bottom: 3px;
   padding-top: 3px;
-  border-bottom: 2px solid #E5E5E5;
+  border-bottom: 2px solid #e5e5e5;
   max-width: 760px;
   width: 100%;
 }
@@ -78,7 +66,7 @@
 
 .content-linked-item span {
   margin-right: 3px;
-  color: #0B69E3;
+  color: #0b69e3;
   font-size: 18px;
   line-height: 22px;
 }
@@ -169,4 +157,72 @@
   line-height: 22px;
   font-weight: 500;
 }
-/*# sourceMappingURL=myissues.css.map */
+
+.button-specifications {
+  background-color: #fab06b;
+}
+
+.button-settings {
+  background-color: #3e8ef7;
+}
+
+.button-add-new {
+  background-color: #11c26d;
+}
+
+.page-title-button {
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  color: #f3f7f9;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.page-title-button-icon {
+  margin-right: 10px;
+}
+
+.page-title-button p {
+  padding-bottom: 2px;
+}
+
+.page-title-buttons {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content-issues-list {
+  overflow-y: scroll;
+  height: 70vh;
+}
+
+.content-issues-item {
+  margin-right: 10px;
+}
+
+.content-issues-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.content-issues-list::-webkit-scrollbar-track {
+  background-color: inherit;
+}
+
+.content-issues-list::-webkit-scrollbar-thumb {
+  background-color: #ccd5db;
+  outline: 1px solid #ccd5db;
+  border-radius: 2px;
+}
+/*# sourceMappingURL=style.css.map */

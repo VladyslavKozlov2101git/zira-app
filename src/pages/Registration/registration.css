@@ -14,18 +14,6 @@
   font-size: 30px;
 }
 
-.register-input {
-  border: none;
-  color: #A3AFB7;
-  line-height: 29px;
-  background-color: inherit;
-  font-size: 24px;
-  font-weight: 400;
-  padding: 9px 5px;
-  border-bottom: 1px solid #A3AFB7;
-  outline: none;
-}
-
 .register-box {
   margin-top: 19px;
 }
@@ -43,6 +31,10 @@
   cursor: pointer;
   border: none;
   margin-left: 16px;
+}
+
+.register-create:disabled {
+  background-color: rgba(62, 142, 247, 0.7);
 }
 
 .register-create {
@@ -77,5 +69,56 @@
   display: -ms-flexbox;
   display: flex;
   margin: 60px auto 20px;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 61px 60px 0 60px;
+  }
+  .register-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .input-block.input-half {
+    max-width: 600px;
+  }
+  .register-box.register-box-buttons.row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media (max-width: 426px) {
+  .main {
+    padding: 61px 20px 0 20px;
+  }
+  .input-block input,
+  .input-block label {
+    font-size: 20px;
+  }
+  .error_message-txt {
+    font-size: 14px;
+  }
+  .register-login,
+  .register-create {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 321px) {
+  .main {
+    padding: 61px 5px 0 5px;
+  }
+  .error_message-txt {
+    font-size: 12px;
+  }
+  .register-login,
+  .register-create {
+    font-size: 18px;
+  }
 }
 /*# sourceMappingURL=registration.css.map */

@@ -75,16 +75,16 @@ $successColorBG: #c2fadc;
 
 //SCROLL BAR MIXINS
 
-@mixin scrollBAR($width, $color) {
+@mixin scrollBAR{
   &::-webkit-scrollbar {
-    width: $width;
+    width: 6px;
   }
   &::-webkit-scrollbar-track {
     background-color: inherit;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: $color;
-    outline: 1px solid $color;
+    background-color: #ccd5db;
+    outline: 1px solid #ccd5db;
     border-radius: 2px;
   }
 }
