@@ -23,13 +23,14 @@ export const registration = async (values, reduxFunc) =>{
 }
 
 
-export const login = async (values) =>{
+export const login = async (values, reduxFunc) =>{
     try {
         const response = await axios.post('http://api.zira.givenfly.space/users/login/',values)
         localStorage.setItem('token', response.data.token);
         localStorage.removeItem('authError')
         document.location.reload();
     } catch (error) {
+        reduxFunc(messagesTXT.invalidCredentials)
         localStorage.setItem("authError",error.response.data.detail)
     }
 }

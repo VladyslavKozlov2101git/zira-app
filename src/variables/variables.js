@@ -90,5 +90,6 @@ export let dropdownTypeOptions = [{
 ]
 
 export let messagesTXT={
-    successfulRegistration:"You are succesfully registered! Please wait until admin will check your account."
+    successfulRegistration:"You are succesfully registered! Please wait until admin will check your account.",
+    invalidCredentials:"Please enter correct credentials"
 }
